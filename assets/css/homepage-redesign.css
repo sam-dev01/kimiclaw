@@ -7,6 +7,60 @@
   --home-shadow-soft: 0 20px 60px rgba(2, 4, 14, 0.28);
 }
 
+/* Homepage-only footer after removing blog assets from the landing page. */
+.home-redesign .site-footer {
+  padding: 32px 0 46px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, rgba(9, 11, 22, 0.1), rgba(9, 11, 22, 0.72));
+}
+
+.home-redesign .site-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.home-redesign .site-footer-brand {
+  display: grid;
+  gap: 10px;
+}
+
+.home-redesign .site-footer-brand p {
+  margin: 0;
+  max-width: 420px;
+  color: rgba(220, 225, 245, 0.72);
+  line-height: 1.7;
+}
+
+.home-redesign .site-footer-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.home-redesign .site-footer-links a {
+  color: rgba(220, 225, 245, 0.72);
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.home-redesign .site-footer-links a:hover {
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .home-redesign .site-footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .home-redesign .site-footer-links {
+    gap: 16px;
+  }
+}
+
 body.home-redesign {
   background:
     radial-gradient(circle at top left, rgba(96, 165, 250, 0.08), transparent 22%),
@@ -416,6 +470,57 @@ body.home-redesign::after {
 
 .home-redesign .float-delivery .del-icon {
   color: #A78BFA;
+}
+
+/* Performance tuning: keep the look, drop the heaviest scroll-time effects. */
+body.home-redesign::before,
+body.home-redesign::after,
+.home-redesign main::before,
+.home-redesign main::after {
+  display: none;
+}
+
+.home-redesign .navbar,
+.home-redesign .nav-links,
+.home-redesign .nav-cta,
+.home-redesign .mobile-nav-inner,
+.home-redesign .mobile-nav-footer,
+.home-redesign .btn-ghost,
+.home-redesign .f-label,
+.home-redesign .float-card {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.home-redesign .mock-browser,
+.home-redesign .f-label,
+.home-redesign .float-card,
+.home-redesign .hero-glow,
+.home-redesign .workflow-ring,
+.home-redesign .workflow-noise,
+.home-redesign .workflow-stage [data-depth],
+.home-redesign .ticker-track,
+.home-redesign .ticker-rtl,
+.home-redesign .final-cta-orb,
+.home-redesign .final-cta-dots span {
+  animation: none !important;
+  transition: none !important;
+}
+
+.home-redesign .hero-glow,
+.home-redesign .hero-grid-overlay,
+.home-redesign .mock-gradient-bg {
+  opacity: 0.32;
+}
+
+.home-redesign .workflow-stage,
+.home-redesign .hero-workflow-preview,
+.home-redesign .workflow-player {
+  contain: layout paint;
+}
+
+.home-redesign .hero-workflow-preview {
+  display: none;
 }
 
 .home-redesign .del-info {
