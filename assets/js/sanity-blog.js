@@ -106,6 +106,11 @@
       .join(' ');
   }
 
+  function authorBioText(author) {
+    if (!author?.bio) return '';
+    return ptText(author.bio).trim();
+  }
+
   function getReadingTime(post) {
     if (post.readingTime) return post.readingTime;
     const source = ptText(post.body || []);
@@ -474,25 +479,52 @@
 
     const toc = buildToc(post.body || []);
     const categories = (post.categories || []).map((category) => category.title).filter(Boolean);
+    const categoryTags = categories.length
+      ? `<div class="article-category-row">${categories.map((category) => `<span class="article-category-chip">${escapeHtml(category)}</span>`).join('')}</div>`
+      : '';
+    const authorName = escapeHtml(post.author?.name || 'KimiClaw Editorial');
+    const authorBio = escapeHtml(authorBioText(post.author) || 'Editorial insights from KimiClaw on websites, content systems, and growth.');
     const image = post.mainImage?.asset?.url
       ? `<img class="article-hero-image" src="${escapeHtml(post.mainImage.asset.url)}" alt="${escapeHtml(post.mainImage.alt || post.title)}">`
       : '';
 
     heroRoot.innerHTML = (
       '<div class="article-hero-wrap">' +
+        '<a class="article-back-link" href="/blog">Back to blog</a>' +
         `<span class="blog-panel-eyebrow">${escapeHtml(categories[0] || 'Article')}</span>` +
         `<h1 class="article-title">${escapeHtml(post.title)}</h1>` +
         `<p>${escapeHtml(post.excerpt || '')}</p>` +
         '<div class="article-meta-bar">' +
           `<span>${formatDate(post.publishedAt)}</span>` +
           `<span>${getReadingTime(post)} min read</span>` +
-          `<span>${escapeHtml(post.author?.name || 'KimiClaw Editorial')}</span>` +
+          `<span>${authorName}</span>` +
         '</div>' +
+        categoryTags +
         image +
       '</div>'
     );
 
-    contentRoot.innerHTML = `<div class="prose">${portableTextToHtml(post.body || [])}</div>`;
+    contentRoot.innerHTML =
+      '<div class="article-content-shell">' +
+        `<div class="prose">${portableTextToHtml(post.body || [])}</div>` +
+        '<div class="article-support-grid">' +
+          '<section class="article-author-card">' +
+            '<span class="blog-panel-eyebrow">Written by</span>' +
+            `<h3>${authorName}</h3>` +
+            `<p>${authorBio}</p>` +
+          '</section>' +
+          '<section class="article-next-step-card">' +
+            '<span class="blog-panel-eyebrow">Next step</span>' +
+            '<h3>Want this kind of content and structure for your brand?</h3>' +
+            '<p>We help businesses turn websites, content systems, and landing pages into a cleaner lead-generation engine.</p>' +
+            '<div class="article-action-links">' +
+              '<a href="/work">See our work</a>' +
+              '<a href="/blog">Read more articles</a>' +
+              '<a href="/#contact">Start a project</a>' +
+            '</div>' +
+          '</section>' +
+        '</div>' +
+      '</div>';
 
     tocRoot.innerHTML = toc.length
       ? toc.map((item) => `<li class="${item.level}"><a href="#${escapeHtml(item.id)}">${escapeHtml(item.text)}</a></li>`).join('')
