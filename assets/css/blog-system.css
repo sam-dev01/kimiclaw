@@ -2222,10 +2222,11 @@ label {
 }
 
 .article-hero-wrap > p {
-  max-width: 62ch !important;
-  font-size: 18px !important;
-  line-height: 1.75 !important;
+  max-width: 60ch !important;
+  font-size: 17px !important;
+  line-height: 1.7 !important;
   margin-top: 6px !important;
+  color: rgba(223, 229, 245, 0.88) !important;
 }
 
 .article-meta-bar {
@@ -2238,26 +2239,50 @@ label {
 }
 
 .article-content-wrap {
-  max-width: 760px !important;
+  max-width: 720px !important;
   gap: 26px !important;
 }
 
 .article-content-wrap .prose p,
 .article-content-wrap .prose li {
-  font-size: 17px !important;
-  line-height: 1.88 !important;
+  max-width: 64ch;
+  font-size: 18px !important;
+  line-height: 1.82 !important;
+  letter-spacing: -0.01em;
+  color: #e1e7f8 !important;
 }
 
 .article-content-wrap .prose h2 {
-  margin-top: 42px !important;
-  margin-bottom: 12px !important;
-  font-size: clamp(26px, 2.7vw, 34px) !important;
+  max-width: 20ch;
+  margin-top: 46px !important;
+  margin-bottom: 14px !important;
+  font-size: clamp(28px, 2.8vw, 36px) !important;
+  line-height: 1.12 !important;
+  letter-spacing: -0.035em !important;
 }
 
 .article-content-wrap .prose h3 {
-  margin-top: 28px !important;
+  max-width: 24ch;
+  margin-top: 30px !important;
   margin-bottom: 10px !important;
-  font-size: clamp(21px, 2vw, 26px) !important;
+  font-size: clamp(22px, 2vw, 27px) !important;
+  line-height: 1.18 !important;
+  letter-spacing: -0.025em !important;
+}
+
+.article-content-wrap .prose p + p {
+  margin-top: 18px !important;
+}
+
+.article-content-wrap .prose ul,
+.article-content-wrap .prose ol,
+.article-content-wrap .prose blockquote {
+  margin-top: 20px !important;
+}
+
+.article-content-wrap .prose strong {
+  color: #ffffff;
+  font-weight: 700;
 }
 
 .article-toc-card {
