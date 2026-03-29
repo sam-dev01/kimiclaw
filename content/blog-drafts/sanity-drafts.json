@@ -1,0 +1,493 @@
+[
+  {
+    "_id": "drafts.category-ai-websites",
+    "_type": "category",
+    "title": "AI Websites",
+    "slug": {
+      "_type": "slug",
+      "current": "ai-websites"
+    },
+    "description": "Articles about AI-assisted website strategy, delivery, and positioning."
+  },
+  {
+    "_id": "drafts.category-homepage-design",
+    "_type": "category",
+    "title": "Homepage Design",
+    "slug": {
+      "_type": "slug",
+      "current": "homepage-design"
+    },
+    "description": "Articles about homepage structure, clarity, and conversion."
+  },
+  {
+    "_id": "drafts.category-sanity-cms",
+    "_type": "category",
+    "title": "Sanity CMS",
+    "slug": {
+      "_type": "slug",
+      "current": "sanity-cms"
+    },
+    "description": "Articles about Sanity CMS setup, modeling, and editorial systems."
+  },
+  {
+    "_id": "drafts.post-ai-website-design-small-businesses-2026",
+    "_type": "post",
+    "title": "AI Website Design for Small Businesses: What Actually Saves Time in 2026",
+    "slug": {
+      "_type": "slug",
+      "current": "ai-website-design-small-businesses-2026"
+    },
+    "excerpt": "AI can speed up website delivery for small businesses, but only when the process is structured correctly. Here is what actually saves time in 2026, and what still needs human judgment.",
+    "publishedAt": "2026-03-29T19:30:00.000Z",
+    "author": {
+      "_type": "reference",
+      "_ref": "87deb047-c42d-49c2-a05b-4ab60a763c47"
+    },
+    "categories": [
+      {
+        "_type": "reference",
+        "_ref": "drafts.category-ai-websites"
+      }
+    ],
+    "featured": true,
+    "readingTime": 7,
+    "seoTitle": "AI Website Design for Small Businesses: What Saves Time in 2026",
+    "seoDescription": "Learn what actually makes AI website design faster for small businesses, where the real time savings come from, and what still needs human strategy.",
+    "body": [
+      {
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "If you run a small business, the promise of an AI website sounds simple: launch faster, spend less, and still look professional. That promise can be true, but only when AI is used in the right parts of the process."
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "The real time savings do not come from pressing one magic button. They come from removing slow handoffs, speeding up drafting, and tightening revision cycles. AI helps most when it supports a good workflow, not when it replaces business decisions."
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "Where the real speed comes from"
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "The biggest time savings usually happen in content drafts, design exploration, repetitive production work, and revision cycles. Instead of waiting days for every page draft or layout option, teams can compare directions quickly and react earlier."
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "Reusable sections, clearer systems, and faster content iteration shorten the gap between strategy and a working page. That is what makes AI-assisted website delivery meaningfully faster for small businesses."
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "What still needs human judgment"
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "AI can help build faster, but it should not decide the business positioning for you. Offer clarity, pricing psychology, proof selection, conversion flow, and buyer trust still need human strategy. If those parts are weak, a faster process only gets you to a weak result sooner."
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "The bottom line"
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "AI website design saves time when it removes production drag, speeds up drafts, and makes revisions easier. The best outcome comes from combining AI speed with human direction. That is where a small business gets both speed and quality."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "drafts.post-high-converting-service-business-homepage",
+    "_type": "post",
+    "title": "What Makes a High-Converting Service Business Homepage?",
+    "slug": {
+      "_type": "slug",
+      "current": "high-converting-service-business-homepage"
+    },
+    "excerpt": "Most service business homepages lose leads because they are vague, crowded, or hard to trust. Here is the structure that helps a homepage convert.",
+    "publishedAt": "2026-03-29T19:40:00.000Z",
+    "author": {
+      "_type": "reference",
+      "_ref": "87deb047-c42d-49c2-a05b-4ab60a763c47"
+    },
+    "categories": [
+      {
+        "_type": "reference",
+        "_ref": "drafts.category-homepage-design"
+      }
+    ],
+    "featured": false,
+    "readingTime": 6,
+    "seoTitle": "What Makes a High-Converting Service Business Homepage?",
+    "seoDescription": "A practical breakdown of the sections, messaging, and trust signals that help a service business homepage convert more visitors into leads.",
+    "body": [
+      {
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "Most service business websites do not fail because they look old. They fail because visitors have to work too hard to understand what the business does, who it helps, and what to do next."
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "A homepage should reduce confusion quickly. If it does that well, the rest of the page can build trust and move visitors toward action. If it does not, even a beautiful design can underperform."
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "The homepage has one main job"
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "The main job of a homepage is not to say everything. It is to create enough clarity and trust for the visitor to keep moving. That usually means answering four questions fast: what do you do, who is it for, why should I trust you, and what should I do next."
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "What strong homepages usually include"
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "A clear headline with audience and outcome"
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "A strong primary call to action"
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "Proof early in the page"
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "Clear services and process explanation"
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "FAQs that handle common objections"
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "A high-converting homepage is clear before it is clever. It makes the offer easy to understand, gives real proof, and points visitors toward one obvious next step. If a homepage is not generating enough leads, the issue is often structure, messaging, and trust rather than traffic alone."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "drafts.post-why-sanity-cms-smart-choice-small-agencies",
+    "_type": "post",
+    "title": "Why Sanity CMS Is a Smart Choice for Small Agencies",
+    "slug": {
+      "_type": "slug",
+      "current": "why-sanity-cms-smart-choice-small-agencies"
+    },
+    "excerpt": "Small agencies need a CMS that is flexible, structured, and easy to scale. Here is why Sanity is often a better fit than heavier page-builder systems.",
+    "publishedAt": "2026-03-29T19:50:00.000Z",
+    "author": {
+      "_type": "reference",
+      "_ref": "87deb047-c42d-49c2-a05b-4ab60a763c47"
+    },
+    "categories": [
+      {
+        "_type": "reference",
+        "_ref": "drafts.category-sanity-cms"
+      }
+    ],
+    "featured": false,
+    "readingTime": 6,
+    "seoTitle": "Why Sanity CMS Is a Smart Choice for Small Agencies",
+    "seoDescription": "Sanity CMS gives small agencies a flexible content system, better publishing control, and cleaner SEO workflows than many traditional website builders.",
+    "body": [
+      {
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "Small agencies often outgrow simple page builders faster than they expect. At the beginning, convenience matters. But once client work becomes more custom and SEO starts to matter more, those quick tools can become limiting."
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "Sanity CMS gives agencies a structured content system instead of forcing everything through a visual page builder. That means cleaner workflows, more control, and fewer long-term content problems."
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "Structured content is the real advantage"
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "With Sanity, agencies can define content types such as posts, authors, testimonials, FAQs, case studies, and site settings. Content stays organized and reusable instead of being trapped in one-off layouts."
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "Better for SEO and editorial workflows"
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "Sanity makes it much easier to control SEO fields such as slugs, titles, meta descriptions, categories, and publishing dates. Developers can define the structure while editors publish safely without breaking layout code."
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "style": "h2",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "When Sanity makes the most sense"
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "The site needs structured content"
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "SEO matters"
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "listItem": "bullet",
+        "level": 1,
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "The agency wants a scalable CMS"
+          }
+        ]
+      },
+      {
+        "_type": "block",
+        "style": "normal",
+        "markDefs": [],
+        "children": [
+          {
+            "_type": "span",
+            "marks": [],
+            "text": "For small agencies building modern content-driven sites, Sanity is often a strong strategic choice because it balances developer control with editor usability and leaves more room for long-term growth."
+          }
+        ]
+      }
+    ]
+  }
+]
