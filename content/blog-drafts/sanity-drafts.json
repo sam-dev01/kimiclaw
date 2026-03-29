@@ -45,6 +45,7 @@
     },
     "categories": [
       {
+        "_key": "cat-ai-websites-1",
         "_type": "reference",
         "_ref": "drafts.category-ai-websites"
       }
@@ -55,11 +56,13 @@
     "seoDescription": "Learn what actually makes AI website design faster for small businesses, where the real time savings come from, and what still needs human strategy.",
     "body": [
       {
+        "_key": "aiw-001",
         "_type": "block",
         "style": "normal",
         "markDefs": [],
         "children": [
           {
+            "_key": "aiw-001-span-1",
             "_type": "span",
             "marks": [],
             "text": "If you run a small business, the promise of an AI website sounds simple: launch faster, spend less, and still look professional. That promise can be true, but only when AI is used in the right parts of the process."
@@ -67,11 +70,13 @@
         ]
       },
       {
+        "_key": "aiw-002",
         "_type": "block",
         "style": "normal",
         "markDefs": [],
         "children": [
           {
+            "_key": "aiw-002-span-1",
             "_type": "span",
             "marks": [],
             "text": "The real time savings do not come from pressing one magic button. They come from removing slow handoffs, speeding up drafting, and tightening revision cycles. AI helps most when it supports a good workflow, not when it replaces business decisions."
@@ -79,11 +84,13 @@
         ]
       },
       {
+        "_key": "aiw-003",
         "_type": "block",
         "style": "h2",
         "markDefs": [],
         "children": [
           {
+            "_key": "aiw-003-span-1",
             "_type": "span",
             "marks": [],
             "text": "Where the real speed comes from"
@@ -91,11 +98,13 @@
         ]
       },
       {
+        "_key": "aiw-004",
         "_type": "block",
         "style": "normal",
         "markDefs": [],
         "children": [
           {
+            "_key": "aiw-004-span-1",
             "_type": "span",
             "marks": [],
             "text": "The biggest time savings usually happen in content drafts, design exploration, repetitive production work, and revision cycles. Instead of waiting days for every page draft or layout option, teams can compare directions quickly and react earlier."
@@ -103,11 +112,13 @@
         ]
       },
       {
+        "_key": "aiw-005",
         "_type": "block",
         "style": "normal",
         "markDefs": [],
         "children": [
           {
+            "_key": "aiw-005-span-1",
             "_type": "span",
             "marks": [],
             "text": "Reusable sections, clearer systems, and faster content iteration shorten the gap between strategy and a working page. That is what makes AI-assisted website delivery meaningfully faster for small businesses."
@@ -115,11 +126,13 @@
         ]
       },
       {
+        "_key": "aiw-006",
         "_type": "block",
         "style": "h2",
         "markDefs": [],
         "children": [
           {
+            "_key": "aiw-006-span-1",
             "_type": "span",
             "marks": [],
             "text": "What still needs human judgment"
@@ -127,11 +140,13 @@
         ]
       },
       {
+        "_key": "aiw-007",
         "_type": "block",
         "style": "normal",
         "markDefs": [],
         "children": [
           {
+            "_key": "aiw-007-span-1",
             "_type": "span",
             "marks": [],
             "text": "AI can help build faster, but it should not decide the business positioning for you. Offer clarity, pricing psychology, proof selection, conversion flow, and buyer trust still need human strategy. If those parts are weak, a faster process only gets you to a weak result sooner."
@@ -139,11 +154,13 @@
         ]
       },
       {
+        "_key": "aiw-008",
         "_type": "block",
         "style": "h2",
         "markDefs": [],
         "children": [
           {
+            "_key": "aiw-008-span-1",
             "_type": "span",
             "marks": [],
             "text": "The bottom line"
@@ -151,11 +168,13 @@
         ]
       },
       {
+        "_key": "aiw-009",
         "_type": "block",
         "style": "normal",
         "markDefs": [],
         "children": [
           {
+            "_key": "aiw-009-span-1",
             "_type": "span",
             "marks": [],
             "text": "AI website design saves time when it removes production drag, speeds up drafts, and makes revisions easier. The best outcome comes from combining AI speed with human direction. That is where a small business gets both speed and quality."
@@ -180,6 +199,7 @@
     },
     "categories": [
       {
+        "_key": "cat-homepage-design-1",
         "_type": "reference",
         "_ref": "drafts.category-homepage-design"
       }
@@ -190,11 +210,13 @@
     "seoDescription": "A practical breakdown of the sections, messaging, and trust signals that help a service business homepage convert more visitors into leads.",
     "body": [
       {
+        "_key": "hp-001",
         "_type": "block",
         "style": "normal",
         "markDefs": [],
         "children": [
           {
+            "_key": "hp-001-span-1",
             "_type": "span",
             "marks": [],
             "text": "Most service business websites do not fail because they look old. They fail because visitors have to work too hard to understand what the business does, who it helps, and what to do next."
@@ -202,11 +224,13 @@
         ]
       },
       {
+        "_key": "hp-002",
         "_type": "block",
         "style": "normal",
         "markDefs": [],
         "children": [
           {
+            "_key": "hp-002-span-1",
             "_type": "span",
             "marks": [],
             "text": "A homepage should reduce confusion quickly. If it does that well, the rest of the page can build trust and move visitors toward action. If it does not, even a beautiful design can underperform."
@@ -214,11 +238,13 @@
         ]
       },
       {
+        "_key": "hp-003",
         "_type": "block",
         "style": "h2",
         "markDefs": [],
         "children": [
           {
+            "_key": "hp-003-span-1",
             "_type": "span",
             "marks": [],
             "text": "The homepage has one main job"
@@ -226,11 +252,13 @@
         ]
       },
       {
+        "_key": "hp-004",
         "_type": "block",
         "style": "normal",
         "markDefs": [],
         "children": [
           {
+            "_key": "hp-004-span-1",
             "_type": "span",
             "marks": [],
             "text": "The main job of a homepage is not to say everything. It is to create enough clarity and trust for the visitor to keep moving. That usually means answering four questions fast: what do you do, who is it for, why should I trust you, and what should I do next."
@@ -238,11 +266,13 @@
         ]
       },
       {
+        "_key": "hp-005",
         "_type": "block",
         "style": "h2",
         "markDefs": [],
         "children": [
           {
+            "_key": "hp-005-span-1",
             "_type": "span",
             "marks": [],
             "text": "What strong homepages usually include"
@@ -250,12 +280,14 @@
         ]
       },
       {
+        "_key": "hp-006",
         "_type": "block",
         "listItem": "bullet",
         "level": 1,
         "markDefs": [],
         "children": [
           {
+            "_key": "hp-006-span-1",
             "_type": "span",
             "marks": [],
             "text": "A clear headline with audience and outcome"
@@ -263,12 +295,14 @@
         ]
       },
       {
+        "_key": "hp-007",
         "_type": "block",
         "listItem": "bullet",
         "level": 1,
         "markDefs": [],
         "children": [
           {
+            "_key": "hp-007-span-1",
             "_type": "span",
             "marks": [],
             "text": "A strong primary call to action"
@@ -276,12 +310,14 @@
         ]
       },
       {
+        "_key": "hp-008",
         "_type": "block",
         "listItem": "bullet",
         "level": 1,
         "markDefs": [],
         "children": [
           {
+            "_key": "hp-008-span-1",
             "_type": "span",
             "marks": [],
             "text": "Proof early in the page"
@@ -289,12 +325,14 @@
         ]
       },
       {
+        "_key": "hp-009",
         "_type": "block",
         "listItem": "bullet",
         "level": 1,
         "markDefs": [],
         "children": [
           {
+            "_key": "hp-009-span-1",
             "_type": "span",
             "marks": [],
             "text": "Clear services and process explanation"
@@ -302,12 +340,14 @@
         ]
       },
       {
+        "_key": "hp-010",
         "_type": "block",
         "listItem": "bullet",
         "level": 1,
         "markDefs": [],
         "children": [
           {
+            "_key": "hp-010-span-1",
             "_type": "span",
             "marks": [],
             "text": "FAQs that handle common objections"
@@ -315,11 +355,13 @@
         ]
       },
       {
+        "_key": "hp-011",
         "_type": "block",
         "style": "normal",
         "markDefs": [],
         "children": [
           {
+            "_key": "hp-011-span-1",
             "_type": "span",
             "marks": [],
             "text": "A high-converting homepage is clear before it is clever. It makes the offer easy to understand, gives real proof, and points visitors toward one obvious next step. If a homepage is not generating enough leads, the issue is often structure, messaging, and trust rather than traffic alone."
@@ -344,6 +386,7 @@
     },
     "categories": [
       {
+        "_key": "cat-sanity-cms-1",
         "_type": "reference",
         "_ref": "drafts.category-sanity-cms"
       }
@@ -354,11 +397,13 @@
     "seoDescription": "Sanity CMS gives small agencies a flexible content system, better publishing control, and cleaner SEO workflows than many traditional website builders.",
     "body": [
       {
+        "_key": "san-001",
         "_type": "block",
         "style": "normal",
         "markDefs": [],
         "children": [
           {
+            "_key": "san-001-span-1",
             "_type": "span",
             "marks": [],
             "text": "Small agencies often outgrow simple page builders faster than they expect. At the beginning, convenience matters. But once client work becomes more custom and SEO starts to matter more, those quick tools can become limiting."
@@ -366,11 +411,13 @@
         ]
       },
       {
+        "_key": "san-002",
         "_type": "block",
         "style": "normal",
         "markDefs": [],
         "children": [
           {
+            "_key": "san-002-span-1",
             "_type": "span",
             "marks": [],
             "text": "Sanity CMS gives agencies a structured content system instead of forcing everything through a visual page builder. That means cleaner workflows, more control, and fewer long-term content problems."
@@ -378,11 +425,13 @@
         ]
       },
       {
+        "_key": "san-003",
         "_type": "block",
         "style": "h2",
         "markDefs": [],
         "children": [
           {
+            "_key": "san-003-span-1",
             "_type": "span",
             "marks": [],
             "text": "Structured content is the real advantage"
@@ -390,11 +439,13 @@
         ]
       },
       {
+        "_key": "san-004",
         "_type": "block",
         "style": "normal",
         "markDefs": [],
         "children": [
           {
+            "_key": "san-004-span-1",
             "_type": "span",
             "marks": [],
             "text": "With Sanity, agencies can define content types such as posts, authors, testimonials, FAQs, case studies, and site settings. Content stays organized and reusable instead of being trapped in one-off layouts."
@@ -402,11 +453,13 @@
         ]
       },
       {
+        "_key": "san-005",
         "_type": "block",
         "style": "h2",
         "markDefs": [],
         "children": [
           {
+            "_key": "san-005-span-1",
             "_type": "span",
             "marks": [],
             "text": "Better for SEO and editorial workflows"
@@ -414,11 +467,13 @@
         ]
       },
       {
+        "_key": "san-006",
         "_type": "block",
         "style": "normal",
         "markDefs": [],
         "children": [
           {
+            "_key": "san-006-span-1",
             "_type": "span",
             "marks": [],
             "text": "Sanity makes it much easier to control SEO fields such as slugs, titles, meta descriptions, categories, and publishing dates. Developers can define the structure while editors publish safely without breaking layout code."
@@ -426,11 +481,13 @@
         ]
       },
       {
+        "_key": "san-007",
         "_type": "block",
         "style": "h2",
         "markDefs": [],
         "children": [
           {
+            "_key": "san-007-span-1",
             "_type": "span",
             "marks": [],
             "text": "When Sanity makes the most sense"
@@ -438,12 +495,14 @@
         ]
       },
       {
+        "_key": "san-008",
         "_type": "block",
         "listItem": "bullet",
         "level": 1,
         "markDefs": [],
         "children": [
           {
+            "_key": "san-008-span-1",
             "_type": "span",
             "marks": [],
             "text": "The site needs structured content"
@@ -451,12 +510,14 @@
         ]
       },
       {
+        "_key": "san-009",
         "_type": "block",
         "listItem": "bullet",
         "level": 1,
         "markDefs": [],
         "children": [
           {
+            "_key": "san-009-span-1",
             "_type": "span",
             "marks": [],
             "text": "SEO matters"
@@ -464,12 +525,14 @@
         ]
       },
       {
+        "_key": "san-010",
         "_type": "block",
         "listItem": "bullet",
         "level": 1,
         "markDefs": [],
         "children": [
           {
+            "_key": "san-010-span-1",
             "_type": "span",
             "marks": [],
             "text": "The agency wants a scalable CMS"
@@ -477,11 +540,13 @@
         ]
       },
       {
+        "_key": "san-011",
         "_type": "block",
         "style": "normal",
         "markDefs": [],
         "children": [
           {
+            "_key": "san-011-span-1",
             "_type": "span",
             "marks": [],
             "text": "For small agencies building modern content-driven sites, Sanity is often a strong strategic choice because it balances developer control with editor usability and leaves more room for long-term growth."
