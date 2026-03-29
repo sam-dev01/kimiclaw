@@ -1,0 +1,1627 @@
+﻿<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3M5DCLXREC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-3M5DCLXREC');
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TitanBuild Construction | Premium Industrial Engineering</title>
+    <meta name="description" content="TitanBuild Construction delivers high-end international construction projects with modern industrial design and engineering excellence." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "brand-orange": "#ff6b00",
+              "brand-yellow": "#ffcc00",
+              charcoal: "#121212",
+              steel: "#2a2a2a"
+            },
+            fontFamily: {
+              sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+              display: ["Space Grotesk", "sans-serif"]
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      :root {
+        --brand-orange: #ff6b00;
+        --brand-yellow: #ffcc00;
+        --charcoal: #121212;
+        --steel: #2a2a2a;
+        --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+        --font-display: "Space Grotesk", sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        background: #000;
+        color: #fff;
+        font-family: var(--font-sans);
+      }
+
+      ::selection {
+        background: rgba(255, 107, 0, 0.3);
+      }
+
+      h1, h2, h3, h4, h5, h6 {
+        font-family: var(--font-display);
+      }
+
+      .glow-orange {
+        box-shadow: 0 0 20px rgba(255, 107, 0, 0.2);
+      }
+
+      .glow-text-orange {
+        text-shadow: 0 0 10px rgba(255, 107, 0, 0.5);
+      }
+
+      .glass {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .liquid-glass {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+        backdrop-filter: blur(25px) saturate(200%);
+        -webkit-backdrop-filter: blur(25px) saturate(200%);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .liquid-glass::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle at center, rgba(255, 107, 0, 0.05) 0%, transparent 50%);
+        animation: liquid-flow 10s infinite linear;
+        pointer-events: none;
+      }
+
+      @keyframes liquid-flow {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+      /* 3D Construction Models */
+      .construction-scene {
+        perspective: 1000px;
+        position: absolute;
+        inset: 0;
+        pointer-events: none; /* Don't block background clicks */
+        z-index: 1;
+      }
+
+      /* Tower Crane */
+      .crane-wrapper {
+        position: relative;
+        transform-style: preserve-3d;
+        animation: crane-swing 6s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
+        cursor: pointer;
+        pointer-events: auto; /* Enable interaction for the model itself */
+        transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        z-index: 5;
+      }
+
+      .crane-wrapper:hover {
+        transform: scale(1.03) rotateY(8deg);
+      }
+
+      .crane-wrapper:hover .crane-hook-line {
+        animation-duration: 2s; /* Faster sway on hover */
+      }
+
+      @keyframes crane-swing {
+        0%, 100% { transform: rotateY(-4deg) rotateX(1deg); }
+        50% { transform: rotateY(4deg) rotateX(-1deg); }
+      }
+
+      .crane-mast {
+        width: 12px;
+        height: 450px;
+        background: linear-gradient(to right, #111, #333, #111);
+        position: relative;
+        border-left: 1px solid rgba(255,107,0,0.2);
+      }
+
+      .crane-jib {
+        position: absolute;
+        top: 40px;
+        left: -200px;
+        width: 550px;
+        height: 8px;
+        background: #e66000;
+        transform-origin: 200px center;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+      }
+
+      .crane-counter-jib {
+        position: absolute;
+        top: 40px;
+        right: -100px;
+        width: 100px;
+        height: 12px;
+        background: #333;
+        border: 1px solid #444;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+      }
+
+      .crane-hook-line {
+        position: absolute;
+        top: 8px;
+        left: 10px;
+        width: 1px;
+        height: 180px;
+        background: rgba(255,255,255,0.2);
+        transform-origin: top;
+        animation: hook-heavy-sway 4s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
+      }
+      @keyframes hook-heavy-sway {
+        0%, 100% { transform: rotate(1deg) scaleY(1); }
+        50% { transform: rotate(-1deg) scaleY(1.02); }
+      }
+
+      .crane-hook {
+        position: absolute;
+        bottom: 0;
+        left: -6px;
+        width: 14px;
+        height: 14px;
+        border: 2px solid #e66000;
+        border-top: none;
+        border-radius: 0 0 7px 7px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+      }
+
+      /* Refined Excavator with Shadow Interaction */
+      .excavator-wrapper {
+        position: absolute;
+        right: 5%;
+        bottom: 15%;
+        transform-style: preserve-3d;
+        opacity: 0.4;
+        animation: excavator-subtle-move 6s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
+        z-index: 5;
+        cursor: pointer;
+        pointer-events: auto; /* Enable interaction for the model itself */
+        transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        display: none;
+      }
+
+      @media (min-width: 1280px) {
+        .excavator-wrapper {
+          display: block;
+        }
+      }
+
+      .excavator-wrapper:hover {
+        opacity: 0.8;
+        transform: scale(1.05) rotateY(15deg);
+      }
+
+      .excavator-wrapper:hover .excavator-arm-main {
+        animation-duration: 2s;
+      }
+
+      @keyframes excavator-subtle-move {
+        0%, 100% { transform: translateX(0) rotateY(8deg); }
+        50% { transform: translateX(15px) rotateY(12deg); }
+      }
+
+      /* Soft Shadow casting towards text/buttons */
+      .excavator-shadow {
+        position: absolute;
+        bottom: -30px;
+        left: -60px;
+        width: 300px;
+        height: 60px;
+        background: radial-gradient(ellipse at center, rgba(0,0,0,0.5) 0%, transparent 80%);
+        filter: blur(20px);
+        transform: rotateX(80deg) rotateY(-10deg);
+        animation: shadow-pulse 6s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
+        pointer-events: none;
+      }
+
+      @keyframes shadow-pulse {
+        0%, 100% { opacity: 0.6; transform: rotateX(80deg) rotateY(-10deg) scale(1); }
+        50% { opacity: 0.4; transform: rotateX(80deg) rotateY(-10deg) scale(1.1); }
+      }
+
+      .excavator-body {
+        width: 140px;
+        height: 70px;
+        background: #d45600;
+        border-radius: 10px;
+        position: relative;
+        box-shadow: inset -15px -15px 30px rgba(0,0,0,0.4), 0 10px 20px rgba(0,0,0,0.3);
+      }
+
+      .excavator-tracks {
+        position: absolute;
+        bottom: -10px;
+        left: -5px;
+        width: 150px;
+        height: 20px;
+        background: #111;
+        border-radius: 5px;
+        box-shadow: inset 0 0 10px rgba(255,255,255,0.1);
+        background-image: repeating-linear-gradient(90deg, transparent, transparent 10px, #222 10px, #222 12px);
+      }
+
+      .excavator-cabin {
+        position: absolute;
+        top: -35px;
+        left: 15px;
+        width: 55px;
+        height: 45px;
+        background: #0a0a0a;
+        border: 1px solid #222;
+        border-radius: 5px;
+        box-shadow: inset 0 0 15px rgba(255,255,255,0.1);
+      }
+
+      .excavator-arm-main {
+        position: absolute;
+        top: 25px;
+        right: 15px;
+        width: 110px;
+        height: 18px;
+        background: #d45600;
+        transform-origin: left center;
+        animation: arm-slow 4s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
+      }
+
+      @keyframes arm-slow {
+        0%, 100% { transform: rotate(-15deg); }
+        50% { transform: rotate(-30deg); }
+      }
+
+      .excavator-arm-sub {
+        position: absolute;
+        top: 0;
+        right: -90px;
+        width: 100px;
+        height: 14px;
+        background: #d45600;
+        transform-origin: left center;
+        animation: sub-arm-slow 4s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
+      }
+
+      @keyframes sub-arm-slow {
+        0%, 100% { transform: rotate(50deg); }
+        50% { transform: rotate(35deg); }
+      }
+
+      .excavator-bucket {
+        position: absolute;
+        bottom: -12px;
+        right: -18px;
+        width: 35px;
+        height: 30px;
+        background: #1a1a1a;
+        border-radius: 0 0 18px 6px;
+        transform-origin: top center;
+        animation: bucket-slow 4s infinite cubic-bezier(0.45, 0.05, 0.55, 0.95);
+      }
+
+      @keyframes bucket-slow {
+        0%, 100% { transform: rotate(0deg); }
+        50% { transform: rotate(-25deg); }
+      }
+
+      /* Custom Cursor */
+      #custom-cursor {
+        width: 20px;
+        height: 20px;
+        background: rgba(255, 107, 0, 0.5);
+        border-radius: 50%;
+        position: fixed;
+        pointer-events: none;
+        z-index: 9999;
+        transition: transform 0.1s ease;
+        mix-blend-mode: difference;
+      }
+      #cursor-follower {
+        width: 40px;
+        height: 40px;
+        border: 1px solid rgba(255, 107, 0, 0.3);
+        border-radius: 50%;
+        position: fixed;
+        pointer-events: none;
+        z-index: 9998;
+        transition: transform 0.2s ease-out;
+      }
+
+      /* Scroll Progress */
+      #scroll-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 3px;
+        background: linear-gradient(to right, #ff6b00, #ffcc00);
+        z-index: 100;
+        width: 0%;
+      }
+
+      /* Reveal Animations */
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Bento Grid */
+      .bento-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 220px);
+        gap: 2rem;
+      }
+      .bento-item {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .bento-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+      .bento-item:nth-child(2) { grid-column: span 2; }
+      .bento-item:nth-child(3) { grid-column: span 1; }
+      .bento-item:nth-child(4) { grid-column: span 1; }
+
+      .badge-glow {
+        box-shadow: 0 0 15px rgba(255, 107, 0, 0.05);
+        transition: all 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+      .badge-glow:hover {
+        box-shadow: 0 0 30px rgba(255, 107, 0, 0.3);
+        border-color: rgba(255, 107, 0, 0.3);
+        transform: translateY(-8px);
+      }
+
+      .section-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.65rem;
+        padding: 0.55rem 0.9rem;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 107, 0, 0.2);
+        background: rgba(255, 107, 0, 0.08);
+        color: var(--brand-orange);
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+      }
+
+      .section-eyebrow::before {
+        content: "";
+        width: 0.45rem;
+        height: 0.45rem;
+        border-radius: 999px;
+        background: linear-gradient(135deg, var(--brand-orange), var(--brand-yellow));
+        box-shadow: 0 0 18px rgba(255, 107, 0, 0.55);
+      }
+
+      .hero-shell {
+        position: relative;
+        width: 100%;
+        padding-top: 3.75rem;
+        padding-bottom: 3.5rem;
+      }
+
+      .hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(240px, 0.62fr) minmax(340px, 0.88fr);
+        gap: 1.5rem;
+        align-items: center;
+      }
+
+      .hero-radial {
+        position: absolute;
+        border-radius: 999px;
+        filter: blur(90px);
+        pointer-events: none;
+      }
+
+      .hero-radial-left {
+        top: 14%;
+        left: -10%;
+        width: 24rem;
+        height: 24rem;
+        background: rgba(255, 107, 0, 0.18);
+      }
+
+      .hero-radial-right {
+        right: -6%;
+        bottom: 10%;
+        width: 28rem;
+        height: 28rem;
+        background: rgba(255, 204, 0, 0.12);
+      }
+
+      .hero-panel {
+        position: relative;
+        border-radius: 2rem;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background:
+          linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.03)),
+          radial-gradient(circle at top, rgba(255, 107, 0, 0.18), transparent 55%),
+          #0b0b0d;
+        box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+        overflow: hidden;
+      }
+
+      .hero-panel::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+        background-size: 34px 34px;
+        mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9), transparent);
+        pointer-events: none;
+      }
+
+      .hero-panel-glow {
+        position: absolute;
+        inset: auto auto -20% 15%;
+        width: 70%;
+        height: 40%;
+        background: radial-gradient(circle, rgba(255, 107, 0, 0.25) 0%, transparent 70%);
+        filter: blur(50px);
+        pointer-events: none;
+      }
+
+      .hero-metric {
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(255, 255, 255, 0.04);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+      }
+
+      .signal-row {
+        display: grid;
+        gap: 0.85rem;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .signal-item {
+        padding-top: 0.85rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+      }
+
+      .service-rail {
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .service-panel {
+        position: relative;
+        padding: 2rem 0 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+      }
+
+      .service-panel::before {
+        content: attr(data-step);
+        position: absolute;
+        top: 1.35rem;
+        right: 0;
+        color: rgba(255, 255, 255, 0.08);
+        font-family: var(--font-display);
+        font-size: clamp(2.5rem, 4vw, 4.5rem);
+        font-weight: 700;
+        line-height: 1;
+      }
+
+      .project-overlay {
+        background: linear-gradient(180deg, transparent 15%, rgba(0, 0, 0, 0.86) 100%);
+      }
+
+      .contact-panel {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .contact-panel::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at top right, rgba(255, 107, 0, 0.16), transparent 36%);
+        pointer-events: none;
+      }
+
+      .contact-note {
+        border-left: 2px solid rgba(255, 107, 0, 0.45);
+        padding-left: 1rem;
+      }
+
+      /* Liquid Glass & Animations */
+      .nav-shell {
+        padding: 0.65rem 0;
+      }
+
+      .nav-liquid-glass {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.03));
+        backdrop-filter: blur(30px) saturate(180%);
+        -webkit-backdrop-filter: blur(30px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+        position: relative;
+      }
+
+      .nav-liquid-glass::before {
+        content: "";
+        position: absolute;
+        top: -100%;
+        left: -100%;
+        width: 300%;
+        height: 300%;
+        background: radial-gradient(circle at center, rgba(255, 107, 0, 0.06) 0%, transparent 40%);
+        animation: nav-liquid-flow 15s infinite linear;
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      @keyframes nav-liquid-flow {
+        0% { transform: translate(0, 0) rotate(0deg); }
+        50% { transform: translate(10%, 10%) rotate(180deg); }
+        100% { transform: translate(0, 0) rotate(360deg); }
+      }
+
+      .nav-link {
+        position: relative;
+        color: rgba(255, 255, 255, 0.78);
+        transition: color 0.3s ease;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -0.55rem;
+        width: 100%;
+        height: 1px;
+        transform: scaleX(0);
+        transform-origin: center;
+        background: linear-gradient(90deg, transparent, rgba(255, 107, 0, 0.95), transparent);
+        transition: transform 0.3s ease;
+      }
+
+      .nav-link:hover {
+        color: #fff;
+      }
+
+      .nav-link:hover::after {
+        transform: scaleX(1);
+      }
+
+      .nav-cta {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.82));
+        color: #0b0b0d;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55), 0 12px 30px rgba(0, 0, 0, 0.18);
+      }
+
+      .nav-cta:hover {
+        background: linear-gradient(135deg, var(--brand-orange), var(--brand-yellow));
+        color: #111;
+      }
+
+      .hero-copy {
+        position: relative;
+      }
+
+      .hero-crane-stage {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 30rem;
+      }
+
+      .hero-crane-frame {
+        position: relative;
+        width: 17rem;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        transform: scale(0.5);
+        transform-origin: center center;
+      }
+
+      .hero-crane-frame::before {
+        content: "";
+        position: absolute;
+        inset: auto 8% 1.2rem;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, rgba(255, 107, 0, 0.45), transparent);
+        filter: blur(0.2px);
+      }
+
+      .hero-crane-stage .crane-wrapper {
+        transform-origin: center bottom;
+      }
+
+      .hero-copy::before {
+        content: "";
+        position: absolute;
+        left: -1.5rem;
+        top: 1rem;
+        width: 1px;
+        height: calc(100% - 2rem);
+        background: linear-gradient(180deg, rgba(255, 107, 0, 0.35), transparent 85%);
+      }
+
+      .hero-support-line {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.8rem 1.2rem;
+        font-size: 0.78rem;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.42);
+      }
+
+      .hero-support-line span {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+
+      .hero-support-line span::before {
+        content: "";
+        width: 0.35rem;
+        height: 0.35rem;
+        border-radius: 999px;
+        background: rgba(255, 107, 0, 0.8);
+        box-shadow: 0 0 12px rgba(255, 107, 0, 0.4);
+      }
+
+      .hero-title {
+        font-size: clamp(3.6rem, 6.2vw, 6.6rem);
+        line-height: 0.88;
+      }
+
+      .hero-body {
+        font-size: clamp(0.98rem, 1.3vw, 1.12rem);
+        line-height: 1.65;
+      }
+
+      .hero-action {
+        padding: 0.95rem 1.55rem;
+        font-size: 0.95rem;
+      }
+
+      .hero-stat-value {
+        font-size: clamp(1.55rem, 2vw, 2rem);
+      }
+
+      .hero-panel-title {
+        font-size: clamp(1.4rem, 1.7vw, 1.8rem);
+      }
+
+      .hero-panel-copy {
+        font-size: 0.92rem;
+        line-height: 1.55;
+      }
+
+      .min-h-screen .hero-shell .hero-grid {
+        transform: translate(-7px, 48px);
+      }
+
+      .hero-grid .active .hero-panel {
+        transform: translate(18px, -25px);
+      }
+
+      .hero-grid .active .hero-crane-frame {
+        transform: translate(-64px, -213px) scale(0.5);
+      }
+
+      .hero-grid .hero-copy h1 {
+        transform: translate(-22px, 0);
+        font-size: 76px;
+        margin-right: 89px;
+        width: 565px;
+      }
+
+      .hero-grid .hero-copy p {
+        transform: translate(-17px, 0);
+      }
+
+      .construction-scene .excavator-wrapper .excavator-body {
+        transform: translate(-600px, -11px);
+      }
+
+      .liquid-glass {
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+        backdrop-filter: blur(25px) saturate(200%);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      }
+
+      .liquid-glass::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle at center, rgba(255, 107, 0, 0.03) 0%, transparent 50%);
+        animation: liquid-flow 25s infinite linear;
+        pointer-events: none;
+      }
+
+      @keyframes liquid-flow {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+      .glow-orange {
+        box-shadow: 0 0 20px rgba(255, 107, 0, 0.2);
+      }
+
+      .neon-bg {
+        background: linear-gradient(135deg, #ff6b00, #ffcc00);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .neon-bg::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+        pointer-events: none;
+      }
+
+      .neon-text-glow {
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .neon-card {
+        background: rgba(0, 0, 0, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .neon-card:hover {
+        background: rgba(0, 0, 0, 0.1);
+        transform: translateY(-5px);
+      }
+
+      .animate-jcb-walk {
+        animation: jcb-walk 30s linear infinite;
+      }
+
+      /* JCB Animation */
+      @keyframes jcb-walk {
+        0% { transform: translate(-200px, 0) rotate(0deg); }
+        100% { transform: translate(calc(100vw + 200px), 0) rotate(0deg); }
+      }
+
+      @keyframes jcb-arm {
+        0%, 100% { transform: rotate(0deg); }
+        25% { transform: rotate(-30deg); }
+        50% { transform: rotate(0deg); }
+        75% { transform: rotate(-10deg); }
+      }
+
+      @keyframes jcb-bucket {
+        0%, 100% { transform: rotate(0deg); }
+        50% { transform: rotate(-45deg); }
+      }
+
+      .jcb-container {
+        animation: jcb-walk 20s infinite ease-in-out;
+      }
+
+      .jcb-arm {
+        animation: jcb-arm 5s infinite ease-in-out;
+      }
+
+      .jcb-bucket {
+        animation: jcb-bucket 5s infinite ease-in-out;
+      }
+
+      .jcb-track-wheel {
+        animation: spin 1s infinite linear;
+      }
+
+      @keyframes spin {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+
+      .glass {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+
+      @media (max-width: 767px) {
+        body {
+          cursor: auto;
+        }
+
+        #custom-cursor,
+        #cursor-follower {
+          display: none;
+        }
+
+        .signal-row {
+          grid-template-columns: 1fr;
+        }
+
+        .service-panel::before {
+          font-size: 2.5rem;
+          top: 0.9rem;
+        }
+
+        .hero-shell {
+          padding-top: 4.5rem;
+          padding-bottom: 4rem;
+        }
+
+        .hero-copy::before {
+          display: none;
+        }
+      }
+
+      @media (max-width: 1023px) {
+        .hero-shell {
+          padding-top: 4.8rem;
+        }
+      }
+
+      @media (min-width: 1024px) {
+        .hero-shell {
+          min-height: calc(100svh - 7rem);
+          display: flex;
+          align-items: center;
+        }
+      }
+
+      @media (max-width: 1279px) {
+        .hero-grid {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        .hero-crane-stage {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-black text-white selection:bg-brand-orange/30 font-sans overflow-x-hidden cursor-none">
+    <div id="custom-cursor"></div>
+    <div id="cursor-follower"></div>
+    <div id="scroll-progress"></div>
+    
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed z-50 transition-all duration-500 top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl">
+      <div id="nav-container" class="nav-shell nav-liquid-glass px-4 md:px-6 flex justify-between items-center transition-all duration-500 rounded-[1.55rem]">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 md:w-9 md:h-9 bg-brand-orange flex items-center justify-center rounded-sm rotate-45">
+            <svg class="text-black -rotate-45 w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 18 6-6 6 6"/><path d="m12 12 6-6"/><path d="m6 6 6 6"/></svg>
+          </div>
+          <span class="text-xl md:text-2xl font-bold tracking-tighter uppercase italic">Titan<span class="text-brand-orange">Build</span></span>
+        </div>
+
+        <div class="hidden md:flex items-center gap-6 xl:gap-8 text-[0.92rem] font-medium uppercase tracking-[0.18em]">
+          <a href="#services" class="nav-link">Services</a>
+          <a href="#projects" class="nav-link">Projects</a>
+          <a href="#impact" class="nav-link">Impact</a>
+          <a href="#vision" class="nav-link">Vision</a>
+          <a href="#contact" class="nav-link">Contact</a>
+          <a href="#contact" class="nav-cta px-4 py-2.5 rounded-full font-bold transition-all duration-300 inline-flex items-center gap-2">
+            Get Quote
+          </a>
+        </div>
+
+        <button class="md:hidden p-2 hover:text-brand-orange transition-colors" id="mobile-menu-btn" aria-label="Toggle Menu">
+          <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-[45] bg-black/95 backdrop-blur-xl translate-x-full transition-transform duration-500 flex flex-col items-center justify-center gap-8 text-2xl font-black uppercase tracking-widest">
+      <a href="#services" class="mobile-link hover:text-brand-orange transition-colors">Services</a>
+      <a href="#projects" class="mobile-link hover:text-brand-orange transition-colors">Projects</a>
+      <a href="#impact" class="mobile-link hover:text-brand-orange transition-colors">Impact</a>
+      <a href="#vision" class="mobile-link hover:text-brand-orange transition-colors">Vision</a>
+      <a href="#contact" class="mobile-link hover:text-brand-orange transition-colors">Contact</a>
+      <button class="bg-brand-orange text-white px-10 py-4 rounded-none font-bold hover:bg-brand-yellow hover:text-black transition-all duration-300">
+        Get Quote
+      </button>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center overflow-hidden bg-black">
+      <!-- Blueprint Grid Background -->
+      <div class="absolute inset-0 z-0 opacity-10" style="background-image: linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px); background-size: 50px 50px;"></div>
+      <div class="absolute inset-0 z-0 opacity-20" style="background-image: radial-gradient(circle at 2px 2px, #444 1px, transparent 0); background-size: 200px 200px;"></div>
+      
+      <!-- 3D Construction Scene -->
+      <div class="construction-scene">
+        <!-- Excavator -->
+        <div class="excavator-wrapper hidden lg:block">
+          <div class="excavator-shadow"></div>
+          <div class="excavator-tracks"></div>
+          <div class="excavator-body">
+            <div class="excavator-cabin"></div>
+            <div class="excavator-arm-main">
+              <div class="excavator-arm-sub">
+                <div class="excavator-bucket"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Walking JCB (Background) -->
+        <div class="absolute bottom-0 left-0 w-24 h-16 bg-brand-orange/20 rounded-t-lg animate-jcb-walk opacity-20 hidden xl:block">
+          <div class="absolute -top-8 left-4 w-12 h-8 bg-brand-orange/30 rounded-t-md"></div>
+          <div class="absolute bottom-0 -left-4 w-8 h-8 bg-black/40 rounded-full animate-bounce"></div>
+          <div class="absolute bottom-0 -right-4 w-8 h-8 bg-black/40 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+        </div>
+      </div>
+
+      <div class="hero-shell max-w-7xl mx-auto px-6 relative z-10">
+        <div class="hero-radial hero-radial-left"></div>
+        <div class="hero-radial hero-radial-right"></div>
+        <div class="hero-grid">
+          <div class="hero-copy max-w-3xl">
+            <div class="section-eyebrow mb-6">Future-Ready Construction</div>
+            <h1 class="hero-title font-black tracking-tighter uppercase mb-6">
+              We build complex spaces with
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-orange via-orange-300 to-brand-yellow">clarity, speed, and control.</span>
+            </h1>
+            <p class="hero-body text-white/65 max-w-2xl mb-7 font-light">
+              TitanBuild delivers flagship commercial, industrial, and residential projects with disciplined planning, premium materials, and execution teams that stay accountable from first sketch to final handover.
+            </p>
+
+            <div class="flex flex-wrap gap-3 mb-7">
+              <a href="#contact" class="hero-action bg-brand-orange text-white font-bold hover:bg-brand-yellow hover:text-black transition-all duration-300 inline-flex items-center gap-2 group">
+                Get Free Quote
+                <svg class="group-hover:translate-x-1 transition-transform" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+              <a href="#projects" class="hero-action border border-white/15 hover:border-white/40 font-bold transition-all duration-300 inline-flex items-center gap-2">
+                View Projects
+              </a>
+            </div>
+
+            <div class="hero-support-line mb-7">
+              <span>Commercial towers</span>
+              <span>Industrial infrastructure</span>
+              <span>High-end residences</span>
+            </div>
+
+            <div class="signal-row max-w-3xl">
+              <div class="signal-item">
+                <div class="hero-stat-value font-black tracking-tight">1200+</div>
+                <div class="text-xs uppercase tracking-[0.28em] text-white/45 mt-2">Projects delivered</div>
+              </div>
+              <div class="signal-item">
+                <div class="hero-stat-value font-black tracking-tight">28 days</div>
+                <div class="text-xs uppercase tracking-[0.28em] text-white/45 mt-2">Average pre-build planning cycle</div>
+              </div>
+              <div class="signal-item">
+                <div class="hero-stat-value font-black tracking-tight">9 markets</div>
+                <div class="text-xs uppercase tracking-[0.28em] text-white/45 mt-2">Active international delivery partners</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-crane-stage reveal" aria-hidden="true">
+            <div class="hero-crane-frame">
+              <div class="crane-wrapper">
+                <div class="crane-mast"></div>
+                <div class="crane-jib">
+                  <div class="crane-trolley">
+                    <div class="crane-hook-line">
+                      <div class="crane-hook"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="crane-counter-jib"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="relative reveal">
+            <div class="hero-panel p-5 md:p-6">
+              <div class="hero-panel-glow"></div>
+              <div class="relative z-10 flex items-center justify-between mb-6">
+                <div>
+                  <div class="text-[11px] uppercase tracking-[0.35em] text-white/45 mb-2">Live delivery system</div>
+                  <div class="hero-panel-title font-black uppercase tracking-tight">Project control room</div>
+                </div>
+                <div class="hero-metric rounded-full px-3 py-2 text-[11px] uppercase tracking-[0.28em] text-brand-orange">Online</div>
+              </div>
+
+              <div class="grid gap-3 mb-4">
+                <div class="hero-metric rounded-2xl p-4">
+                  <div class="flex items-center justify-between text-xs uppercase tracking-[0.24em] text-white/45 mb-3">
+                    <span>Current phase</span>
+                    <span>83%</span>
+                  </div>
+                  <div class="h-2 rounded-full bg-white/10 overflow-hidden mb-4">
+                    <div class="h-full w-[83%] bg-gradient-to-r from-brand-orange to-brand-yellow"></div>
+                  </div>
+                  <div class="grid grid-cols-2 gap-3 text-sm">
+                    <div>
+                      <div class="text-white/40 uppercase tracking-[0.24em] text-[10px] mb-2">Site package</div>
+                      <div class="font-semibold">Steel + facade approved</div>
+                    </div>
+                    <div>
+                      <div class="text-white/40 uppercase tracking-[0.24em] text-[10px] mb-2">Next milestone</div>
+                      <div class="font-semibold">Interior systems install</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-3">
+                  <div class="hero-metric rounded-2xl p-4">
+                    <div class="text-white/40 uppercase tracking-[0.24em] text-[10px] mb-2">Client visibility</div>
+                    <div class="text-2xl font-black tracking-tight mb-2">Weekly</div>
+                    <p class="hero-panel-copy text-white/55">Clear reporting, milestone reviews, and budget tracking without chasing updates.</p>
+                  </div>
+                  <div class="hero-metric rounded-2xl p-4">
+                    <div class="text-white/40 uppercase tracking-[0.24em] text-[10px] mb-2">Procurement control</div>
+                    <div class="text-2xl font-black tracking-tight mb-2">48 hrs</div>
+                    <p class="hero-panel-copy text-white/55">Fast decision loops for materials, approvals, and supplier coordination.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="hero-metric rounded-2xl p-4">
+                <div class="flex flex-wrap items-center gap-3 justify-between">
+                  <div>
+                    <div class="text-white/40 uppercase tracking-[0.24em] text-[10px] mb-2">Built for premium builds</div>
+                    <div class="font-semibold">Commercial towers, industrial hubs, and high-end residences</div>
+                  </div>
+                  <a href="#process" class="text-sm font-semibold text-brand-orange inline-flex items-center gap-2">
+                    See process
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-20 animate-bounce hidden xl:flex">
+          <span class="text-[10px] uppercase tracking-[0.3em] font-bold">Scroll</span>
+          <div class="w-px h-12 bg-gradient-to-b from-white to-transparent"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Innovation Section (Bento Grid) -->
+    <section id="innovation" class="py-32 bg-black relative">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="mb-20 reveal">
+          <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4">Industrial <span class="text-brand-orange">Innovation</span></h2>
+          <p class="text-white/50 max-w-md">Pushing the boundaries of what's possible with cutting-edge technology.</p>
+        </div>
+
+        <div class="bento-grid reveal">
+          <div class="bento-item rounded-3xl p-8 flex flex-col justify-end relative overflow-hidden group">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10"></div>
+            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&q=80&w=800" class="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Tech" />
+            <div class="relative z-20">
+              <h3 class="text-2xl font-black uppercase mb-2">Smart Engineering</h3>
+              <p class="text-sm text-white/60">AI-driven structural analysis for maximum efficiency.</p>
+            </div>
+          </div>
+          <div class="bento-item rounded-3xl p-8 flex flex-col justify-end relative overflow-hidden group">
+            <div class="absolute inset-0 bg-brand-orange/10 group-hover:bg-brand-orange/20 transition-colors"></div>
+            <div class="relative z-20">
+              <h3 class="text-2xl font-black uppercase mb-2">Sustainable Materials</h3>
+              <p class="text-sm text-white/60">Eco-friendly concrete and recycled steel solutions.</p>
+            </div>
+          </div>
+          <div class="bento-item rounded-3xl p-8 flex flex-col justify-end relative overflow-hidden group flex items-center justify-center">
+            <div class="text-center">
+              <div class="text-4xl font-black text-brand-orange mb-1">99%</div>
+              <div class="text-[10px] uppercase tracking-widest font-bold">Precision</div>
+            </div>
+          </div>
+          <div class="bento-item rounded-3xl p-8 flex flex-col justify-end relative overflow-hidden group flex items-center justify-center">
+            <div class="text-center">
+              <div class="text-4xl font-black text-brand-orange mb-1">24/7</div>
+              <div class="text-[10px] uppercase tracking-widest font-bold">Monitoring</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-32 bg-charcoal relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6 reveal">
+        <div class="grid lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] gap-14 items-start">
+          <div>
+            <div class="section-eyebrow mb-6">Core Expertise</div>
+            <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-6">Built to perform under <span class="text-brand-orange">real-world pressure</span></h2>
+            <p class="text-white/55 text-lg leading-relaxed max-w-xl">
+              We lead high-stakes projects where coordination, durability, and execution discipline matter more than presentation alone.
+            </p>
+          </div>
+
+          <div class="service-rail grid gap-10">
+            <article class="service-panel" data-step="01">
+              <div class="max-w-xl">
+                <div class="text-[11px] uppercase tracking-[0.3em] text-brand-orange font-bold mb-3">Residential</div>
+                <h3 class="text-2xl md:text-3xl font-black uppercase tracking-tight mb-4">Luxury homes shaped around lifestyle, flow, and finish quality.</h3>
+                <p class="text-white/55 leading-relaxed mb-5">From private villas to multi-unit residences, we balance architecture, structural integrity, and long-term livability.</p>
+          <div class="text-sm text-white/40 uppercase tracking-[0.24em]">Custom design integration &bull; premium materials &bull; detail-led handover</div>
+              </div>
+            </article>
+
+            <article class="service-panel" data-step="02">
+              <div class="max-w-xl">
+                <div class="text-[11px] uppercase tracking-[0.3em] text-brand-orange font-bold mb-3">Commercial</div>
+                <h3 class="text-2xl md:text-3xl font-black uppercase tracking-tight mb-4">Scalable spaces engineered for occupancy, traffic, and brand presence.</h3>
+                <p class="text-white/55 leading-relaxed mb-5">We deliver office, retail, and mixed-use environments with precise scheduling, MEP coordination, and strong client visibility.</p>
+          <div class="text-sm text-white/40 uppercase tracking-[0.24em]">Tight timelines &bull; transparent costing &bull; site-wide coordination</div>
+              </div>
+            </article>
+
+            <article class="service-panel" data-step="03">
+              <div class="max-w-xl">
+                <div class="text-[11px] uppercase tracking-[0.3em] text-brand-orange font-bold mb-3">Renovation</div>
+                <h3 class="text-2xl md:text-3xl font-black uppercase tracking-tight mb-4">Existing structures upgraded without losing momentum on site.</h3>
+                <p class="text-white/55 leading-relaxed mb-5">Our renovation teams modernize aging assets, improve performance, and manage phased delivery with minimal disruption.</p>
+          <div class="text-sm text-white/40 uppercase tracking-[0.24em]">Adaptive reuse &bull; phased execution &bull; modern systems retrofit</div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="why-us" class="py-32 bg-black relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6 reveal">
+        <div class="text-center mb-20">
+          <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4">Why <span class="text-brand-orange">TitanBuild?</span></h2>
+          <p class="text-white/50 max-w-2xl mx-auto">Uncompromising standards and a commitment to excellence in every square inch we build.</p>
+        </div>
+
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+          <!-- On-time Delivery -->
+          <div class="badge-glow glass p-8 rounded-3xl border-white/5 flex flex-col items-center text-center group">
+            <div class="w-16 h-16 rounded-2xl bg-brand-orange/10 flex items-center justify-center mb-6 border border-brand-orange/20 group-hover:bg-brand-orange group-hover:text-black transition-all duration-500">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3 class="text-lg font-black uppercase tracking-tight mb-2">On-Time Delivery</h3>
+            <p class="text-white/40 text-xs leading-relaxed">Strict adherence to project timelines, guaranteed.</p>
+          </div>
+
+          <!-- Transparent Pricing -->
+          <div class="badge-glow glass p-8 rounded-3xl border-white/5 flex flex-col items-center text-center group">
+            <div class="w-16 h-16 rounded-2xl bg-brand-orange/10 flex items-center justify-center mb-6 border border-brand-orange/20 group-hover:bg-brand-orange group-hover:text-black transition-all duration-500">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+            </div>
+            <h3 class="text-lg font-black uppercase tracking-tight mb-2">Transparent Pricing</h3>
+            <p class="text-white/40 text-xs leading-relaxed">No hidden costs. Detailed, honest budgeting.</p>
+          </div>
+
+          <!-- High-Quality Materials -->
+          <div class="badge-glow glass p-8 rounded-3xl border-white/5 flex flex-col items-center text-center group">
+            <div class="w-16 h-16 rounded-2xl bg-brand-orange/10 flex items-center justify-center mb-6 border border-brand-orange/20 group-hover:bg-brand-orange group-hover:text-black transition-all duration-500">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 12L2 9z"/><path d="M11 3l-4 6 10 12"/><path d="M13 3l4 6-10 12"/></svg>
+            </div>
+            <h3 class="text-lg font-black uppercase tracking-tight mb-2">Premium Materials</h3>
+            <p class="text-white/40 text-xs leading-relaxed">Sourcing only the finest industrial-grade components.</p>
+          </div>
+
+          <!-- Experienced Team -->
+          <div class="badge-glow glass p-8 rounded-3xl border-white/5 flex flex-col items-center text-center group">
+            <div class="w-16 h-16 rounded-2xl bg-brand-orange/10 flex items-center justify-center mb-6 border border-brand-orange/20 group-hover:bg-brand-orange group-hover:text-black transition-all duration-500">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3 class="text-lg font-black uppercase tracking-tight mb-2">Expert Team</h3>
+            <p class="text-white/40 text-xs leading-relaxed">Decades of combined international experience.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-32 bg-black">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-6">
+          <div>
+            <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4">Featured <span class="text-brand-orange">Works</span></h2>
+            <p class="text-white/50 max-w-md">A showcase of our most ambitious and technically challenging projects across the globe.</p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="relative group overflow-hidden rounded-2xl aspect-[16/10]">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200" alt="The Zenith Plaza" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" loading="lazy" referrerPolicy="no-referrer" />
+            <div class="project-overlay absolute inset-0 flex flex-col justify-end p-8">
+              <div class="text-brand-orange text-xs font-bold uppercase tracking-widest mb-2">New York, USA</div>
+              <h3 class="text-3xl font-black uppercase mb-3">The Zenith Plaza</h3>
+              <p class="text-sm text-white/65 max-w-sm">Mixed-use tower package with facade coordination, public entry sequence, and high-density delivery planning.</p>
+            </div>
+          </div>
+          <div class="relative group overflow-hidden rounded-2xl aspect-[16/10]">
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=1200" alt="Titan Industrial Hub" class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-700" loading="lazy" referrerPolicy="no-referrer" />
+            <div class="project-overlay absolute inset-0 flex flex-col justify-end p-8">
+              <div class="text-brand-orange text-xs font-bold uppercase tracking-widest mb-2">Berlin, Germany</div>
+              <h3 class="text-3xl font-black uppercase mb-3">Titan Industrial Hub</h3>
+              <p class="text-sm text-white/65 max-w-sm">Large-format industrial campus with phased utility rollout, supplier integration, and schedule-critical logistics.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-32 bg-charcoal relative">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-24">
+          <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-4">The <span class="text-brand-orange">Titan</span> Process</h2>
+        </div>
+        <div class="grid md:grid-cols-4 gap-8 relative">
+          <div class="hidden md:block absolute top-12 left-0 right-0 h-px bg-white/10 z-0"></div>
+          <div class="relative z-10 text-center group">
+            <div class="w-24 h-24 rounded-full bg-steel border border-white/10 flex items-center justify-center mx-auto mb-8 group-hover:border-brand-orange group-hover:glow-orange transition-all duration-500">
+              <span class="text-4xl font-black text-white/20 group-hover:text-brand-orange transition-colors">01</span>
+            </div>
+            <h3 class="text-xl font-bold mb-4 uppercase tracking-tight">Consultation</h3>
+            <p class="text-white/50 text-sm leading-relaxed">We dive deep into your vision and requirements.</p>
+          </div>
+          <div class="relative z-10 text-center group">
+            <div class="w-24 h-24 rounded-full bg-steel border border-white/10 flex items-center justify-center mx-auto mb-8 group-hover:border-brand-orange group-hover:glow-orange transition-all duration-500">
+              <span class="text-4xl font-black text-white/20 group-hover:text-brand-orange transition-colors">02</span>
+            </div>
+            <h3 class="text-xl font-bold mb-4 uppercase tracking-tight">Planning</h3>
+            <p class="text-white/50 text-sm leading-relaxed">Detailed blueprints and transparent budgeting.</p>
+          </div>
+          <div class="relative z-10 text-center group">
+            <div class="w-24 h-24 rounded-full bg-steel border border-white/10 flex items-center justify-center mx-auto mb-8 group-hover:border-brand-orange group-hover:glow-orange transition-all duration-500">
+              <span class="text-4xl font-black text-white/20 group-hover:text-brand-orange transition-colors">03</span>
+            </div>
+            <h3 class="text-xl font-bold mb-4 uppercase tracking-tight">Construction</h3>
+            <p class="text-white/50 text-sm leading-relaxed">Precision execution by our expert teams.</p>
+          </div>
+          <div class="relative z-10 text-center group">
+            <div class="w-24 h-24 rounded-full bg-steel border border-white/10 flex items-center justify-center mx-auto mb-8 group-hover:border-brand-orange group-hover:glow-orange transition-all duration-500">
+              <span class="text-4xl font-black text-white/20 group-hover:text-brand-orange transition-colors">04</span>
+            </div>
+            <h3 class="text-xl font-bold mb-4 uppercase tracking-tight">Delivery</h3>
+            <p class="text-white/50 text-sm leading-relaxed">Final walkthrough and handover on time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Global Impact Section (Neon Background) -->
+    <section id="impact" class="py-32 neon-bg text-black relative z-10">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <div class="reveal">
+            <h2 class="text-5xl md:text-8xl font-black uppercase tracking-tighter mb-8 leading-none neon-text-glow">Global <br />Impact</h2>
+            <p class="text-xl text-black/70 max-w-lg mb-12 font-medium leading-relaxed">
+              From the skyscrapers of New York to the industrial hubs of Berlin, TitanBuild is redefining the global skyline with precision and passion.
+            </p>
+            <div class="grid grid-cols-2 gap-8">
+              <div class="neon-card p-6 rounded-2xl">
+                <div class="text-5xl font-black mb-2">50+</div>
+                <div class="text-xs uppercase tracking-widest font-bold opacity-60">Countries Reached</div>
+              </div>
+              <div class="neon-card p-6 rounded-2xl">
+                <div class="text-5xl font-black mb-2">1200+</div>
+                <div class="text-xs uppercase tracking-widest font-bold opacity-60">Projects Completed</div>
+              </div>
+            </div>
+          </div>
+          <div class="relative reveal">
+            <div class="aspect-square rounded-full border-[20px] border-black/5 absolute -inset-10 animate-spin-slow"></div>
+            <div class="aspect-square rounded-full border-[1px] border-black/20 absolute inset-0"></div>
+            <div class="relative z-10 flex items-center justify-center h-full">
+              <div class="text-center">
+                <div class="text-[12rem] font-black leading-none opacity-10 select-none">TB</div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <div class="w-32 h-32 bg-black rounded-full flex items-center justify-center shadow-2xl">
+                    <svg class="text-brand-orange w-16 h-16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Future Vision Section -->
+    <section id="vision" class="py-32 bg-black relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row items-center gap-16 reveal">
+          <div class="md:w-1/2">
+            <h2 class="text-4xl md:text-6xl font-black uppercase tracking-tighter mb-8">The <span class="text-brand-orange">Future</span> is Modular</h2>
+            <p class="text-white/50 text-lg leading-relaxed mb-8">
+              We are investing heavily in modular construction techniques that reduce waste by 40% and cut delivery times in half. Our vision is a world where high-end engineering is accessible, sustainable, and rapid.
+            </p>
+            <ul class="space-y-4">
+              <li class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-brand-orange/20 flex items-center justify-center text-brand-orange">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <span class="text-white/80 font-medium">Zero-Waste Construction Sites</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-brand-orange/20 flex items-center justify-center text-brand-orange">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <span class="text-white/80 font-medium">AI-Optimized Supply Chains</span>
+              </li>
+              <li class="flex items-center gap-3">
+                <div class="w-6 h-6 rounded-full bg-brand-orange/20 flex items-center justify-center text-brand-orange">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <span class="text-white/80 font-medium">Carbon-Negative Materials</span>
+              </li>
+            </ul>
+          </div>
+          <div class="md:w-1/2 relative">
+            <div class="aspect-video rounded-3xl overflow-hidden border border-white/10 relative group">
+              <img src="https://images.unsplash.com/photo-1503387762-592dee58c460?auto=format&fit=crop&q=80&w=1200" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" alt="Future Construction" />
+              <div class="absolute inset-0 bg-brand-orange/20 mix-blend-overlay"></div>
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-2xl animate-pulse">
+                  <svg class="text-black w-10 h-10 ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-black relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-16">
+          <div>
+            <div class="section-eyebrow mb-6 reveal">Start A Project</div>
+            <h2 class="text-5xl md:text-7xl font-black uppercase tracking-tighter mb-8 leading-none reveal">Ready to build with <br /><span class="text-brand-orange">more control?</span></h2>
+            <p class="text-white/55 text-lg leading-relaxed max-w-xl mb-10 reveal">
+              Tell us what you are planning and we will map the scope, timeline, and best next step before work begins.
+            </p>
+            <div class="space-y-8 reveal">
+              <div class="flex items-center gap-6">
+                <div class="w-12 h-12 rounded-full bg-steel flex items-center justify-center text-brand-orange">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <div>
+                  <div class="text-xs text-white/40 uppercase font-bold tracking-widest">Call Us</div>
+                  <div class="text-xl font-bold">+1 (800) TITAN-BUILD</div>
+                </div>
+              </div>
+              <div class="contact-note text-white/55 leading-relaxed max-w-lg">
+                High-value projects move faster when scope, reporting, and procurement are aligned from day one. That is where our planning process starts.
+              </div>
+            </div>
+          </div>
+          <div class="glass contact-panel p-10 rounded-3xl border-white/20 reveal">
+            <div class="relative z-10">
+              <div class="flex items-center justify-between gap-4 mb-8">
+                <div>
+                  <div class="text-[11px] uppercase tracking-[0.3em] text-brand-orange font-bold mb-2">Quote Request</div>
+                  <h3 class="text-2xl font-black uppercase">Get your free quote</h3>
+                </div>
+                <div class="hero-metric rounded-full px-3 py-2 text-[11px] uppercase tracking-[0.28em] text-white/60">24h response</div>
+              </div>
+            <form class="space-y-6">
+              <div class="grid sm:grid-cols-2 gap-4">
+                <input type="text" class="w-full bg-white/5 border border-white/10 px-4 py-3 rounded-lg focus:border-brand-orange outline-none transition-colors" placeholder="Full Name" />
+                <input type="email" class="w-full bg-white/5 border border-white/10 px-4 py-3 rounded-lg focus:border-brand-orange outline-none transition-colors" placeholder="Email Address" />
+              </div>
+              <input type="tel" class="w-full bg-white/5 border border-white/10 px-4 py-3 rounded-lg focus:border-brand-orange outline-none transition-colors" placeholder="Phone Number" />
+              <textarea class="w-full min-h-[140px] bg-white/5 border border-white/10 px-4 py-3 rounded-lg focus:border-brand-orange outline-none transition-colors resize-y" placeholder="Tell us about your project scope, site, or timeline"></textarea>
+              <button class="w-full bg-brand-orange text-white py-4 font-black uppercase tracking-widest hover:bg-brand-yellow hover:text-black transition-all duration-300">Request Quote</button>
+        <div class="text-xs uppercase tracking-[0.24em] text-white/35">Clear proposal &bull; timeline review &bull; no-obligation consultation</div>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer / Agency Badge -->
+    <footer class="py-12 border-t border-white/5 bg-black">
+      <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="text-white/40 text-sm">&copy; 2026 TitanBuild. All rights reserved.</div>
+        <a href="https://kimiclaw.in" target="_blank" class="group flex items-center gap-3 glass px-4 py-2 rounded-full border-brand-orange/20 hover:border-brand-orange/50 transition-all duration-300">
+          <span class="text-[10px] uppercase tracking-widest font-bold text-white/60">Built by</span>
+          <span class="text-sm font-black uppercase italic tracking-tighter group-hover:text-brand-orange transition-colors">Kimi<span class="text-brand-orange">Claw</span></span>
+        </a>
+      </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div class="fixed bottom-8 right-8 z-[100]">
+      <div id="chat-box" class="hidden absolute bottom-20 right-0 w-80 glass rounded-2xl overflow-hidden shadow-2xl border-brand-orange/30">
+        <div class="bg-brand-orange p-4 flex justify-between items-center">
+          <span class="font-bold text-sm uppercase tracking-widest text-white">Titan AI Assistant</span>
+          <button id="close-chat"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+        </div>
+        <div class="p-6">
+          <div class="bg-white/5 p-4 rounded-xl text-sm leading-relaxed mb-4">
+            This is a demo AI chatbot. <br />
+            <span class="font-bold text-brand-orange">Contact kimiclaw.in</span> to build this for your business.
+          </div>
+        </div>
+      </div>
+      <button id="chat-toggle" class="w-16 h-16 bg-brand-orange rounded-full flex items-center justify-center shadow-lg glow-orange relative">
+        <svg class="text-white" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      </button>
+    </div>
+
+    <script>
+      const isDesktopPointer = window.matchMedia('(min-width: 768px) and (hover: hover) and (pointer: fine)').matches;
+
+      // Custom Cursor
+      const cursor = document.getElementById('custom-cursor');
+      const follower = document.getElementById('cursor-follower');
+      if (isDesktopPointer) {
+        document.addEventListener('mousemove', (e) => {
+          cursor.style.transform = `translate(${e.clientX - 10}px, ${e.clientY - 10}px)`;
+          follower.style.transform = `translate(${e.clientX - 20}px, ${e.clientY - 20}px)`;
+        });
+      }
+
+      // Scroll Progress
+      window.addEventListener('scroll', () => {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        document.getElementById('scroll-progress').style.width = scrolled + '%';
+      });
+
+      // Reveal on Scroll
+      const reveals = document.querySelectorAll('.reveal');
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+          }
+        });
+      }, { threshold: 0.1 });
+      reveals.forEach(reveal => revealObserver.observe(reveal));
+
+      // Navbar Scroll Effect
+      const navbar = document.getElementById('navbar');
+      const navContainer = document.getElementById('nav-container');
+      let ticking = false;
+
+      const updateNavbar = () => {
+        if (window.scrollY > 50) {
+          navbar.classList.remove('top-4', 'w-[95%]');
+          navbar.classList.add('top-0', 'w-full');
+          navContainer.classList.add('max-w-7xl', 'mx-auto', 'px-4', 'md:px-5', 'py-2.5', 'mt-2', 'rounded-[1.2rem]');
+          navContainer.classList.remove('md:px-6', 'rounded-[1.55rem]');
+        } else {
+          navbar.classList.add('top-4', 'w-[95%]');
+          navbar.classList.remove('top-0', 'w-full');
+          navContainer.classList.remove('max-w-7xl', 'mx-auto', 'md:px-5', 'py-2.5', 'mt-2', 'rounded-[1.2rem]');
+          navContainer.classList.add('md:px-6', 'rounded-[1.55rem]');
+        }
+        ticking = false;
+      };
+
+      window.addEventListener('scroll', () => {
+        if (!ticking) {
+          window.requestAnimationFrame(updateNavbar);
+          ticking = true;
+        }
+      });
+      updateNavbar();
+
+      // Chatbot Toggle
+      const chatToggle = document.getElementById('chat-toggle');
+      const chatBox = document.getElementById('chat-box');
+      const closeChat = document.getElementById('close-chat');
+      chatToggle.addEventListener('click', () => chatBox.classList.toggle('hidden'));
+      closeChat.addEventListener('click', () => chatBox.classList.add('hidden'));
+
+      // Mobile Menu Functionality
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const menuIcon = document.getElementById('menu-icon');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+
+      const toggleMenu = () => {
+        const isOpen = mobileMenu.classList.contains('translate-x-0');
+        if (isOpen) {
+          mobileMenu.classList.remove('translate-x-0');
+          mobileMenu.classList.add('translate-x-full');
+          menuIcon.innerHTML = '<line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line>';
+          document.body.style.overflow = 'auto';
+        } else {
+          mobileMenu.classList.remove('translate-x-full');
+          mobileMenu.classList.add('translate-x-0');
+          menuIcon.innerHTML = '<line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line>';
+          document.body.style.overflow = 'hidden';
+        }
+      };
+
+      mobileMenuBtn.addEventListener('click', toggleMenu);
+      mobileLinks.forEach(link => link.addEventListener('click', toggleMenu));
+
+      // 3D Model Interactivity (Parallax)
+      const crane = document.querySelector('.crane-wrapper');
+      const excavator = document.querySelector('.excavator-wrapper');
+
+      if (isDesktopPointer) {
+        window.addEventListener('mousemove', (e) => {
+          const x = (window.innerWidth / 2 - e.pageX) / 80;
+          const y = (window.innerHeight / 2 - e.pageY) / 80;
+
+          if (crane) {
+            crane.style.transform = `translate(${-x}px, ${y}px) rotateY(${x}deg) rotateX(${-y}deg)`;
+          }
+          if (excavator) {
+            excavator.style.transform = `translate(${-x}px, ${-y}px) rotateY(${x - 8}deg) rotateX(${-y}deg)`;
+          }
+        });
+      }
+    </script>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/69c2242effb4f81c353b4f71/1jkf5qm75';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+  <script src="../assets/js/static-contact-patch.js"></script>
+</body>
+</html>
+

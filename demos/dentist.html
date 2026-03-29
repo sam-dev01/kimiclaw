@@ -1,0 +1,3033 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3M5DCLXREC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-3M5DCLXREC');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bright Smile Dental | Austin, Texas</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   TOKENS & RESET
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        :root {
+            --navy: #0c1b33;
+            --navy2: #162445;
+            --teal: #00c2a8;
+            --teal2: #00a991;
+            --gold: #c9a84c;
+            --gold2: #e8c96a;
+            --white: #ffffff;
+            --cream: #faf9f7;
+            --gray50: #f4f6f9;
+            --gray100: #e8ecf2;
+            --gray300: #b0bac8;
+            --gray500: #6b7a94;
+            --gray700: #3d4a5c;
+            --serif: 'Cormorant Garamond', Georgia, serif;
+            --sans: 'DM Sans', sans-serif;
+            --ease: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--sans);
+            color: var(--navy);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            font-family: var(--sans);
+            cursor: pointer;
+        }
+
+        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   SCROLLBAR
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--cream);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--teal);
+            border-radius: 99px;
+        }
+
+        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   UTILITY
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        .container {
+            max-width: 1160px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 16px;
+        }
+
+        .section-label::before {
+            content: '';
+            width: 28px;
+            height: 1.5px;
+            background: var(--teal);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(36px);
+        }
+
+        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   NAV
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0 32px;
+            transition: background 0.4s, box-shadow 0.4s, padding 0.4s;
+        }
+
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.97);
+            box-shadow: 0 1px 0 var(--gray100), 0 8px 32px rgba(12, 27, 51, 0.08);
+            backdrop-filter: blur(20px);
+        }
+
+        .nav-inner {
+            max-width: 1160px;
+            margin: 0 auto;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+            transition: height 0.4s;
+        }
+
+        nav.scrolled .nav-inner {
+            height: 64px;
+        }
+
+        .nav-logo {
+            display: flex;
+            flex-direction: column;
+            line-height: 1;
+        }
+
+        .nav-logo-name {
+            font-family: var(--serif);
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--navy);
+            letter-spacing: -0.01em;
+        }
+
+        .nav-logo-sub {
+            font-size: 9px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--teal);
+            font-weight: 600;
+            margin-top: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 13.5px;
+            font-weight: 500;
+            color: var(--gray700);
+            letter-spacing: 0.01em;
+            position: relative;
+            transition: color 0.2s;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            right: 0;
+            height: 1.5px;
+            background: var(--teal);
+            transform: scaleX(0);
+            transition: transform 0.25s var(--ease);
+            transform-origin: left;
+        }
+
+        .nav-links a:hover {
+            color: var(--teal);
+        }
+
+        .nav-links a:hover::after {
+            transform: scaleX(1);
+        }
+
+        .nav-cta {
+            background: var(--teal);
+            color: var(--white);
+            padding: 11px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 14px rgba(0, 194, 168, 0.35);
+        }
+
+        .nav-cta:hover {
+            background: var(--teal2);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 20px rgba(0, 194, 168, 0.45);
+        }
+
+        /* Mobile Menu Toggle */
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--navy);
+            cursor: pointer;
+            padding: 8px;
+            margin-right: -8px;
+        }
+
+        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   HERO
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        .hero {
+            min-height: 100vh;
+            background: var(--navy);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        /* Animated background */
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 60% 80% at -10% 50%, rgba(0, 194, 168, 0.12) 0%, transparent 60%),
+                radial-gradient(ellipse 50% 60% at 110% 20%, rgba(201, 168, 76, 0.08) 0%, transparent 55%),
+                radial-gradient(ellipse 40% 40% at 60% 100%, rgba(0, 194, 168, 0.07) 0%, transparent 50%);
+        }
+
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+            background-size: 64px 64px;
+            -webkit-mask-image: radial-gradient(ellipse 80% 90% at 20% 50%, black 20%, transparent 80%);
+            mask-image: radial-gradient(ellipse 80% 90% at 20% 50%, black 20%, transparent 80%);
+        }
+
+        /* Floating tooth SVG shapes */
+        .hero-float {
+            position: absolute;
+            pointer-events: none;
+            border-radius: 50%;
+            opacity: 0.06;
+            animation: heroFloat ease-in-out infinite;
+        }
+
+        .hf1 {
+            width: 300px;
+            height: 300px;
+            background: var(--teal);
+            top: 10%;
+            right: -5%;
+            animation-duration: 8s;
+        }
+
+        .hf2 {
+            width: 180px;
+            height: 180px;
+            background: var(--gold);
+            top: 60%;
+            right: 20%;
+            animation-duration: 11s;
+            animation-delay: 2s;
+        }
+
+        .hf3 {
+            width: 100px;
+            height: 100px;
+            background: var(--teal);
+            bottom: 15%;
+            left: 30%;
+            animation-duration: 7s;
+            animation-delay: 1s;
+        }
+
+        @keyframes heroFloat {
+
+            0%,
+            100% {
+                transform: translateY(0) scale(1)
+            }
+
+            50% {
+                transform: translateY(-30px) scale(1.05)
+            }
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            max-width: 1160px;
+            margin: 0 auto;
+            padding: 80px 32px;
+            width: 100%;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0, 194, 168, 0.12);
+            border: 1px solid rgba(0, 194, 168, 0.25);
+            border-radius: 999px;
+            padding: 6px 16px 6px 10px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 28px;
+            opacity: 0;
+            transform: translateY(16px);
+            animation: heroIn 0.7s var(--ease) 0.1s forwards;
+        }
+
+        .badge-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--teal);
+            animation: badgePulse 2s infinite;
+        }
+
+        @keyframes badgePulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1)
+            }
+
+            50% {
+                opacity: 0.4;
+                transform: scale(0.7)
+            }
+        }
+
+        @keyframes heroIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-h1 {
+            font-family: var(--serif);
+            font-weight: 600;
+            font-size: clamp(42px, 5.5vw, 68px);
+            line-height: 1.08;
+            letter-spacing: -0.025em;
+            color: var(--white);
+            margin-bottom: 22px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: heroIn 0.8s var(--ease) 0.3s forwards;
+        }
+
+        .hero-h1 em {
+            font-style: italic;
+            color: var(--teal);
+        }
+
+        .hero-p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.5);
+            max-width: 440px;
+            margin-bottom: 40px;
+            font-weight: 300;
+            opacity: 0;
+            animation: heroIn 0.7s var(--ease) 0.5s forwards;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            opacity: 0;
+            animation: heroIn 0.7s var(--ease) 0.65s forwards;
+        }
+
+        .btn-primary {
+            background: var(--teal);
+            color: var(--white);
+            padding: 14px 30px;
+            border: none;
+            border-radius: 9px;
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            transition: all 0.2s;
+            box-shadow: 0 4px 20px rgba(0, 194, 168, 0.4);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary:hover {
+            background: var(--teal2);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(0, 194, 168, 0.5);
+        }
+
+        .btn-secondary {
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 14px;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.2s;
+            border: none;
+            background: none;
+        }
+
+        .btn-secondary:hover {
+            color: var(--white);
+        }
+
+        .btn-arrow {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover .btn-arrow {
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateX(4px);
+        }
+
+        .hero-trust {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            opacity: 0;
+            animation: heroIn 0.7s var(--ease) 0.8s forwards;
+        }
+
+        .trust-item {
+            text-align: center;
+        }
+
+        .trust-num {
+            font-family: var(--serif);
+            font-weight: 700;
+            font-size: 28px;
+            color: var(--white);
+            line-height: 1;
+        }
+
+        .trust-num .unit {
+            font-size: 18px;
+            color: var(--teal);
+        }
+
+        .trust-lbl {
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.4);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-top: 3px;
+        }
+
+        .trust-divider {
+            width: 1px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-right {
+            position: relative;
+            opacity: 0;
+            animation: heroIn 0.9s var(--ease) 0.4s forwards;
+        }
+
+        .hero-card-main {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 32px;
+            backdrop-filter: blur(20px);
+            box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .hcard-label {
+            font-size: 10px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+
+        .hcard-title {
+            font-family: var(--serif);
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 20px;
+        }
+
+        .rating-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .stars {
+            color: var(--gold);
+            font-size: 16px;
+            letter-spacing: 2px;
+        }
+
+        .rating-score {
+            font-family: var(--serif);
+            font-weight: 700;
+            font-size: 22px;
+            color: var(--white);
+        }
+
+        .rating-count {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.4);
+            margin-top: 1px;
+        }
+
+        .review-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 10px;
+            border: 0.5px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .review-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .review-top {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .avatar {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--white);
+            flex-shrink: 0;
+        }
+
+        .av1 {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .av2 {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+        }
+
+        .review-name {
+            font-size: 12px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .review-time {
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.3);
+            margin-top: 1px;
+        }
+
+        .review-stars {
+            font-size: 10px;
+            color: var(--gold);
+            margin-left: auto;
+        }
+
+        .review-text {
+            font-size: 11.5px;
+            color: rgba(255, 255, 255, 0.45);
+            line-height: 1.55;
+        }
+
+        .hero-pill {
+            position: absolute;
+            background: white;
+            border-radius: 12px;
+            padding: 12px 18px;
+            box-shadow: 0 16px 40px rgba(12, 27, 51, 0.25);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            animation: pillFloat ease-in-out infinite;
+        }
+
+        @keyframes pillFloat {
+
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-10px)
+            }
+        }
+
+        .pill1 {
+            top: -20px;
+            right: -20px;
+            animation-duration: 5s;
+        }
+
+        .pill2 {
+            bottom: -20px;
+            left: -20px;
+            animation-duration: 7s;
+            animation-delay: 1s;
+        }
+
+        .pill-icon {
+            font-size: 22px;
+        }
+
+        .pill-text strong {
+            display: block;
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .pill-text span {
+            font-size: 10px;
+            color: var(--gray500);
+        }
+
+        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   TRUST BAR
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        .trust-bar {
+            background: var(--cream);
+            border-top: 1px solid var(--gray100);
+            border-bottom: 1px solid var(--gray100);
+            padding: 28px 0;
+        }
+
+        .trust-bar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+
+        .ins-logo {
+            font-family: var(--serif);
+            font-weight: 700;
+            font-size: 16px;
+            color: var(--gray300);
+            letter-spacing: -0.01em;
+            transition: color 0.2s;
+        }
+
+        .ins-logo:hover {
+            color: var(--gray500);
+        }
+
+        .ins-divider {
+            width: 1px;
+            height: 20px;
+            background: var(--gray100);
+        }
+
+        .trust-bar-label {
+            font-size: 10px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--gray300);
+            font-weight: 600;
+        }
+
+        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   SERVICES
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        .services {
+            padding: 110px 0;
+            background: var(--white);
+        }
+
+        .services-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: end;
+            margin-bottom: 64px;
+        }
+
+        .services-h2 {
+            font-family: var(--serif);
+            font-weight: 600;
+            font-size: clamp(36px, 4vw, 52px);
+            line-height: 1.12;
+            letter-spacing: -0.02em;
+            color: var(--navy);
+        }
+
+        .services-h2 em {
+            font-style: italic;
+            color: var(--teal);
+        }
+
+        .services-desc {
+            font-size: 15px;
+            color: var(--gray500);
+            line-height: 1.75;
+            font-weight: 300;
+            max-width: 380px;
+            margin-left: auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1px;
+            background: var(--gray100);
+            border: 1px solid var(--gray100);
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 40px 36px;
+            position: relative;
+            overflow: hidden;
+            transition: background 0.3s;
+            cursor: default;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--teal);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s var(--ease);
+        }
+
+        .service-card:hover {
+            background: var(--cream);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: rgba(0, 194, 168, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 22px;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .service-card:hover .service-icon {
+            background: rgba(0, 194, 168, 0.15);
+            transform: scale(1.05);
+        }
+
+        .service-name {
+            font-family: var(--serif);
+            font-weight: 600;
+            font-size: 20px;
+            color: var(--navy);
+            margin-bottom: 10px;
+            letter-spacing: -0.01em;
+        }
+
+        .service-desc {
+            font-size: 13.5px;
+            color: var(--gray500);
+            line-height: 1.65;
+            font-weight: 300;
+            margin-bottom: 18px;
+        }
+
+        .service-price {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--teal);
+            letter-spacing: 0.04em;
+        }
+
+        .service-link {
+            position: absolute;
+            bottom: 28px;
+            right: 28px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 1.5px solid var(--gray100);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+            color: var(--gray300);
+            transition: all 0.25s var(--ease);
+        }
+
+        .service-card:hover .service-link {
+            border-color: var(--teal);
+            color: var(--teal);
+            transform: rotate(45deg);
+        }
+
+        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   STATS / WHY US
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        .stats-section {
+            padding: 100px 0;
+            background: var(--navy);
+            overflow: hidden;
+        }
+
+        .stats-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .stats-h2 {
+            font-family: var(--serif);
+            font-weight: 600;
+            font-size: clamp(34px, 4vw, 50px);
+            color: var(--white);
+            line-height: 1.12;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        .stats-h2 em {
+            color: var(--teal);
+            font-style: italic;
+        }
+
+        .stats-p {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.45);
+            line-height: 1.75;
+            font-weight: 300;
+            margin-bottom: 40px;
+            max-width: 400px;
+        }
+
+        .why-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .why-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 0.5px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            transition: background 0.2s, border-color 0.2s;
+        }
+
+        .why-item:hover {
+            background: rgba(0, 194, 168, 0.06);
+            border-color: rgba(0, 194, 168, 0.2);
+        }
+
+        .why-check {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(0, 194, 168, 0.15);
+            color: var(--teal);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .why-text strong {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 2px;
+        }
+
+        .why-text span {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.35);
+            line-height: 1.4;
+        }
+
+        .stats-right {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 0.5px solid rgba(255, 255, 255, 0.08);
+            border-radius: 18px;
+            padding: 32px 28px;
+            position: relative;
+            overflow: hidden;
+            transition: background 0.3s;
+        }
+
+        .stat-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .stat-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--teal);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s var(--ease);
+        }
+
+        .stat-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .stat-card.gold::after {
+            background: var(--gold);
+        }
+
+        .stat-num {
+            font-family: var(--serif);
+            font-weight: 700;
+            font-size: 48px;
+            color: var(--white);
+            letter-spacing: -0.03em;
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .stat-num .suf {
+            font-size: 28px;
+            color: var(--teal);
+        }
+
+        .stat-card.gold .stat-num .suf {
+            color: var(--gold);
+        }
+
+        .stat-label {
+            font-size: 12px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.4);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .stat-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 28px;
+            opacity: 0.15;
+        }
+
+        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   BEFORE / AFTER SLIDER
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        .before-after {
+            padding: 110px 0;
+            background: var(--cream);
+        }
+
+        .ba-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .ba-h2 {
+            font-family: var(--serif);
+            font-weight: 600;
+            font-size: clamp(34px, 4vw, 50px);
+            color: var(--navy);
+            letter-spacing: -0.02em;
+            line-height: 1.15;
+        }
+
+        .ba-h2 em {
+            color: var(--teal);
+            font-style: italic;
+        }
+
+        .ba-sub {
+            font-size: 15px;
+            color: var(--gray500);
+            margin-top: 14px;
+            font-weight: 300;
+            max-width: 480px;
+            margin: 14px auto 0;
+        }
+
+        .ba-tabs {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .ba-tab {
+            padding: 9px 22px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            border: 1.5px solid var(--gray100);
+            background: var(--white);
+            color: var(--gray500);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .ba-tab.active {
+            background: var(--navy);
+            color: var(--white);
+            border-color: var(--navy);
+        }
+
+        .slider-wrap {
+            position: relative;
+            width: 100%;
+            max-width: 760px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 32px 80px rgba(12, 27, 51, 0.18);
+            user-select: none;
+            cursor: col-resize;
+        }
+
+        .slider-height {
+            height: 380px;
+        }
+
+        /* Panels */
+        .ba-after,
+        .ba-before {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ba-before {
+            background: linear-gradient(135deg, #f0e6d3 0%, #e8d5c0 100%);
+            z-index: 1;
+        }
+
+        .ba-after {
+            background: linear-gradient(135deg, #e8f5f3 0%, #d4f0ec 100%);
+            clip-path: inset(0 50% 0 0);
+            z-index: 2;
+            transition: none;
+        }
+
+        /* Placeholder dental images using CSS art */
+        .tooth-before {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .tooth-visual {
+            width: 120px;
+            height: 140px;
+            position: relative;
+        }
+
+        .tooth-body {
+            width: 80px;
+            height: 100px;
+            border-radius: 14px 14px 30px 30px;
+            margin: 0 auto;
+        }
+
+        .tooth-before .tooth-body {
+            background: linear-gradient(180deg, #e8d5a0 0%, #c9b87a 100%);
+            box-shadow: inset 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .tooth-after .tooth-body {
+            background: linear-gradient(180deg, #ffffff 0%, #f0f0f0 100%);
+            box-shadow: 0 4px 20px rgba(0, 194, 168, 0.2), inset 0 -4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .tooth-roots {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-top: -4px;
+        }
+
+        .tooth-root {
+            width: 18px;
+            height: 32px;
+            border-radius: 0 0 12px 12px;
+        }
+
+        .tooth-before .tooth-root {
+            background: linear-gradient(180deg, #d4a574 0%, #b8895a 100%);
+        }
+
+        .tooth-after .tooth-root {
+            background: linear-gradient(180deg, #e0e0e0 0%, #c8c8c8 100%);
+        }
+
+        .tooth-label {
+            font-family: var(--serif);
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        .tooth-before .tooth-label {
+            color: #8a6a3a;
+        }
+
+        .tooth-after .tooth-label {
+            color: var(--teal);
+        }
+
+        .tooth-sublabel {
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .tooth-before .tooth-sublabel {
+            color: #b8965a;
+        }
+
+        .tooth-after .tooth-sublabel {
+            color: var(--teal2);
+        }
+
+        .tooth-after {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        /* Slider handle */
+        .slider-handle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            z-index: 10;
+            transform: translateX(-50%);
+            width: 3px;
+            background: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .handle-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--navy);
+            font-size: 16px;
+            font-weight: 700;
+            cursor: col-resize;
+            user-select: none;
+        }
+
+        .handle-arrows {
+            display: flex;
+            gap: 2px;
+            color: var(--navy);
+            font-size: 14px;
+        }
+
+        /* Labels & Note */
+        .ba-label {
+            position: absolute;
+            top: 18px;
+            z-index: 5;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            border-radius: 6px;
+            padding: 5px 12px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            backdrop-filter: blur(8px);
+        }
+
+        .ba-label.left {
+            left: 16px;
+        }
+
+        .ba-label.right {
+            right: 16px;
+        }
+
+        .demo-note {
+            text-align: center;
+            font-size: 12px;
+            color: var(--gray500);
+            margin-top: 20px;
+            font-style: italic;
+            max-width: 600px;
+            margin-inline: auto;
+        }
+
+        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   DOCTOR
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        .doctor-section {
+            padding: 110px 0;
+            background: var(--white);
+        }
+
+        .doctor-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .doctor-img-wrap {
+            position: relative;
+        }
+
+        .doctor-img-bg {
+            position: absolute;
+            inset: 20px -20px -20px 20px;
+            background: linear-gradient(135deg, rgba(0, 194, 168, 0.12), rgba(201, 168, 76, 0.08));
+            border-radius: 24px;
+            z-index: 0;
+        }
+
+        .doctor-img-frame {
+            position: relative;
+            z-index: 1;
+            background: var(--gray50);
+            border-radius: 20px;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* CSS art doctor placeholder */
+        .doctor-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0;
+            padding-bottom: 20px;
+        }
+
+        .doc-bg-shape {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 55%;
+            background: linear-gradient(180deg, transparent, rgba(0, 194, 168, 0.08));
+            border-radius: 0 0 20px 20px;
+        }
+
+        .doc-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #e0d5c8, #c8bdb0);
+            margin-bottom: 0;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .doc-body {
+            width: 180px;
+            height: 160px;
+            background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 100%);
+            border-radius: 50px 50px 0 0;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 24px;
+        }
+
+        .doc-coat {
+            width: 160px;
+            height: 140px;
+            background: white;
+            border-radius: 40px 40px 0 0;
+            opacity: 0.9;
+        }
+
+        .doc-badge-float {
+            position: absolute;
+            z-index: 3;
+            background: white;
+            border-radius: 14px;
+            padding: 14px 18px;
+            box-shadow: 0 12px 40px rgba(12, 27, 51, 0.15);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            animation: pillFloat ease-in-out infinite;
+        }
+
+        .doc-badge-float.db1 {
+            bottom: 32px;
+            right: -24px;
+            animation-duration: 6s;
+        }
+
+        .doc-badge-float.db2 {
+            top: 40px;
+            left: -24px;
+            animation-duration: 8s;
+            animation-delay: 1.5s;
+        }
+
+        .db-icon {
+            font-size: 24px;
+        }
+
+        .db-text strong {
+            display: block;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .db-text span {
+            font-size: 11px;
+            color: var(--gray500);
+        }
+
+        .doc-tag {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--teal);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .doc-tag::before {
+            content: '';
+            width: 28px;
+            height: 1.5px;
+            background: var(--teal);
+        }
+
+        .doc-h2 {
+            font-family: var(--serif);
+            font-weight: 600;
+            font-size: clamp(32px, 3.5vw, 46px);
+            color: var(--navy);
+            letter-spacing: -0.02em;
+            line-height: 1.12;
+            margin-bottom: 6px;
+        }
+
+        .doc-title {
+            font-family: var(--serif);
+            font-style: italic;
+            font-size: 18px;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .doc-bio {
+            font-size: 15px;
+            color: var(--gray500);
+            line-height: 1.75;
+            font-weight: 300;
+            margin-bottom: 28px;
+        }
+
+        .doc-creds {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 36px;
+        }
+
+        .cred-badge {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            background: var(--gray50);
+            border: 1px solid var(--gray100);
+            border-radius: 8px;
+            padding: 8px 14px;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--gray700);
+        }
+
+        .cred-badge span {
+            color: var(--teal);
+            font-size: 14px;
+        }
+
+        .doc-stats {
+            display: flex;
+            gap: 32px;
+            padding-top: 28px;
+            border-top: 1px solid var(--gray100);
+        }
+
+        .doc-stat-n {
+            font-family: var(--serif);
+            font-weight: 700;
+            font-size: 32px;
+            color: var(--navy);
+            letter-spacing: -0.02em;
+        }
+
+        .doc-stat-n em {
+            font-style: normal;
+            color: var(--teal);
+            font-size: 22px;
+        }
+
+        .doc-stat-l {
+            font-size: 11px;
+            color: var(--gray500);
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+
+        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   TESTIMONIALS
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        .testimonials {
+            padding: 110px 0;
+            background: var(--navy);
+            overflow: hidden;
+        }
+
+        .test-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .test-h2 {
+            font-family: var(--serif);
+            font-weight: 600;
+            font-size: clamp(34px, 4vw, 50px);
+            color: var(--white);
+            letter-spacing: -0.02em;
+            line-height: 1.12;
+        }
+
+        .test-h2 em {
+            color: var(--teal);
+            font-style: italic;
+        }
+
+        .test-sub {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.4);
+            margin-top: 14px;
+            font-weight: 300;
+        }
+
+        .test-track-wrap {
+            overflow: hidden;
+        }
+
+        .test-track {
+            display: flex;
+            gap: 24px;
+            animation: scrollTrack 30s linear infinite;
+            width: max-content;
+        }
+
+        .test-track:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scrollTrack {
+            0% {
+                transform: translateX(0)
+            }
+
+            100% {
+                transform: translateX(-50%)
+            }
+        }
+
+        .test-card {
+            width: 360px;
+            flex-shrink: 0;
+            background: rgba(255, 255, 255, 0.05);
+            border: 0.5px solid rgba(255, 255, 255, 0.09);
+            border-radius: 18px;
+            padding: 32px;
+            transition: background 0.3s;
+        }
+
+        .test-card:hover {
+            background: rgba(255, 255, 255, 0.09);
+        }
+
+        .test-stars {
+            color: var(--gold);
+            font-size: 14px;
+            letter-spacing: 2px;
+            margin-bottom: 16px;
+        }
+
+        .test-quote {
+            font-family: var(--serif);
+            font-size: 17px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+
+        .test-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .test-av {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            font-weight: 700;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .ta1 {
+            background: linear-gradient(135deg, #667eea, #764ba2)
+        }
+
+        .ta2 {
+            background: linear-gradient(135deg, #f093fb, #f5576c)
+        }
+
+        .ta3 {
+            background: linear-gradient(135deg, #4facfe, #00f2fe)
+        }
+
+        .ta4 {
+            background: linear-gradient(135deg, #43e97b, #38f9d7)
+        }
+
+        .ta5 {
+            background: linear-gradient(135deg, #fa709a, #fee140)
+        }
+
+        .ta6 {
+            background: linear-gradient(135deg, #a18cd1, #fbc2eb)
+        }
+
+        .test-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .test-loc {
+            font-size: 11.5px;
+            color: rgba(255, 255, 255, 0.35);
+            margin-top: 1px;
+        }
+
+        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   BOOKING
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        .booking-section {
+            padding: 110px 0;
+            background: var(--cream);
+        }
+
+        .booking-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+
+        .book-h2 {
+            font-family: var(--serif);
+            font-weight: 600;
+            font-size: clamp(34px, 4vw, 50px);
+            color: var(--navy);
+            letter-spacing: -0.02em;
+            line-height: 1.12;
+            margin-bottom: 16px;
+        }
+
+        .book-h2 em {
+            color: var(--teal);
+            font-style: italic;
+        }
+
+        .book-p {
+            font-size: 15px;
+            color: var(--gray500);
+            line-height: 1.75;
+            font-weight: 300;
+            margin-bottom: 40px;
+        }
+
+        .contact-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 18px 20px;
+            background: var(--white);
+            border: 1px solid var(--gray100);
+            border-radius: 14px;
+            margin-bottom: 12px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .contact-row:hover {
+            border-color: rgba(0, 194, 168, 0.3);
+            box-shadow: 0 4px 16px rgba(0, 194, 168, 0.08);
+        }
+
+        .contact-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(0, 194, 168, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            flex-shrink: 0;
+        }
+
+        .contact-label {
+            font-size: 11px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--gray300);
+            font-weight: 600;
+        }
+
+        .contact-val {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--navy);
+            margin-top: 2px;
+        }
+
+        .hours-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .hour-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 14px;
+            background: var(--white);
+            border-radius: 10px;
+            border: 1px solid var(--gray100);
+        }
+
+        .hour-day {
+            font-size: 12px;
+            color: var(--gray500);
+            font-weight: 500;
+        }
+
+        .hour-time {
+            font-size: 12px;
+            color: var(--navy);
+            font-weight: 600;
+        }
+
+        /* Booking form */
+        .booking-form {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 36px;
+            box-shadow: 0 24px 60px rgba(12, 27, 51, 0.1);
+            border: 1px solid var(--gray100);
+        }
+
+        .form-title {
+            font-family: var(--serif);
+            font-weight: 600;
+            font-size: 24px;
+            color: var(--navy);
+            margin-bottom: 6px;
+        }
+
+        .form-sub {
+            font-size: 13px;
+            color: var(--gray500);
+            margin-bottom: 28px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 16px;
+        }
+
+        .form-group {
+            flex: 1;
+        }
+
+        .form-label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--gray500);
+            display: block;
+            margin-bottom: 7px;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1.5px solid var(--gray100);
+            border-radius: 10px;
+            font-family: var(--sans);
+            font-size: 14px;
+            color: var(--navy);
+            background: var(--gray50);
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            border-color: var(--teal);
+            background: var(--white);
+            box-shadow: 0 0 0 4px rgba(0, 194, 168, 0.1);
+        }
+
+        .form-select {
+            appearance: none;
+            cursor: pointer;
+        }
+
+        .form-textarea {
+            resize: none;
+            height: 90px;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(135deg, var(--teal), var(--teal2));
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            cursor: pointer;
+            transition: all 0.25s;
+            margin-top: 8px;
+            box-shadow: 0 4px 20px rgba(0, 194, 168, 0.35);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-submit::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+
+        .form-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(0, 194, 168, 0.45);
+        }
+
+        .form-submit:hover::before {
+            opacity: 1;
+        }
+
+        .form-submit:active {
+            transform: translateY(0);
+        }
+
+        .form-note {
+            text-align: center;
+            font-size: 11px;
+            color: var(--gray300);
+            margin-top: 12px;
+        }
+
+        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   FOOTER
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        footer {
+            background: var(--navy);
+            padding: 60px 0 32px;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .footer-top {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        .footer-logo {
+            font-family: var(--serif);
+            font-weight: 700;
+            font-size: 22px;
+            color: var(--white);
+            letter-spacing: -0.01em;
+            margin-bottom: 4px;
+        }
+
+        .footer-logo-sub {
+            font-size: 10px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--teal);
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .footer-desc {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.35);
+            line-height: 1.7;
+            max-width: 240px;
+        }
+
+        .footer-col h4 {
+            font-size: 11px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: 600;
+            margin-bottom: 18px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-col ul li a {
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.4);
+            transition: color 0.2s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--teal);
+        }
+
+        .footer-bottom {
+            padding-top: 28px;
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-copy {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.25);
+        }
+
+        .footer-built {
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .footer-built a {
+            color: var(--teal);
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .footer-built a:hover {
+            color: var(--gold);
+        }
+
+        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   FLOATING BOOK BUTTON
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        .float-btn {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            z-index: 999;
+            background: var(--teal);
+            color: white;
+            padding: 14px 24px;
+            border-radius: 99px;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 8px 32px rgba(0, 194, 168, 0.45);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s var(--ease);
+            animation: floatBtn 0.6s var(--ease) 1.5s both;
+        }
+
+        @keyframes floatBtn {
+            from {
+                opacity: 0;
+                transform: translateY(20px)
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0)
+            }
+        }
+
+        .float-btn:hover {
+            transform: translateY(-3px) scale(1.03);
+            box-shadow: 0 14px 40px rgba(0, 194, 168, 0.55);
+        }
+
+        .float-pulse {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: white;
+            animation: badgePulse 2s infinite;
+        }
+
+        /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+   RESPONSIVE
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
+        @media (max-width: 900px) {
+
+            .hero-inner,
+            .stats-inner,
+            .doctor-inner,
+            .booking-inner {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .services-header {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .services-desc {
+                margin-left: 0;
+            }
+
+            .hero-right {
+                display: none;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stats-right {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .trust-bar-inner {
+                gap: 24px;
+            }
+
+            /* Mobile Nav Overrides */
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                gap: 20px;
+                padding: 30px;
+                box-shadow: 0 10px 30px rgba(12, 27, 51, 0.1);
+                opacity: 0;
+                visibility: hidden;
+                transform: translateY(-10px);
+                transition: all 0.3s var(--ease);
+                border-top: 1px solid var(--gray100);
+            }
+
+            .nav-links.active {
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .hero-trust {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .trust-divider {
+                display: none;
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .footer-top {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="float-btn" onclick="document.querySelector('.booking-section').scrollIntoView({behavior:'smooth'})">
+        <div class="float-pulse"></div> Book Appointment
+    </button>
+
+    <nav id="navbar">
+        <div class="nav-inner">
+            <div class="nav-logo">
+                <span class="nav-logo-name">Bright Smile Dental</span>
+                <span class="nav-logo-sub">Austin, Texas</span>
+            </div>
+
+                <button class="mobile-menu-toggle" aria-label="Toggle Navigation">&#9776;</button>
+
+            <ul class="nav-links">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#doctor">Our Doctor</a></li>
+                <li><a href="#before-after">Results</a></li>
+                <li><a href="#testimonials">Reviews</a></li>
+                <li><a href="#booking">Contact</a></li>
+            </ul>
+            <button class="nav-cta"
+                onclick="document.querySelector('.booking-section').scrollIntoView({behavior:'smooth'})">Book
+                        Appointment &rarr;</button>
+        </div>
+    </nav>
+
+    <section class="hero" id="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-grid"></div>
+        <div class="hero-float hf1"></div>
+        <div class="hero-float hf2"></div>
+        <div class="hero-float hf3"></div>
+
+        <div class="hero-inner">
+            <div class="hero-left">
+                <div class="hero-badge">
+                    <div class="badge-dot"></div>Now Accepting New Patients
+                </div>
+                <h1 class="hero-h1">Austin's Most Trusted<br><em>Dental Practice</em></h1>
+                <p class="hero-p">Modern dentistry designed around your comfort. From routine cleanings to full smile
+                    transformations &mdash; we're here for every step of your journey.</p>
+                <div class="hero-actions">
+                    <button class="btn-primary"
+                        onclick="document.querySelector('.booking-section').scrollIntoView({behavior:'smooth'})">ðŸ“… Book
+                        Free Consultation</button>
+                    <button class="btn-secondary"
+                        onclick="document.getElementById('before-after').scrollIntoView({behavior:'smooth'})">
+                    View Results <span class="btn-arrow">&rarr;</span>
+                    </button>
+                </div>
+                <div class="hero-trust">
+                    <div class="trust-item">
+                        <div class="trust-num"><span class="counter" data-target="2400">0</span><span
+                                class="unit">+</span></div>
+                        <div class="trust-lbl">Happy Patients</div>
+                    </div>
+                    <div class="trust-divider"></div>
+                    <div class="trust-item">
+                        <div class="trust-num"><span class="counter" data-target="15">0</span><span
+                                class="unit">yr</span></div>
+                        <div class="trust-lbl">Experience</div>
+                    </div>
+                    <div class="trust-divider"></div>
+                    <div class="trust-item">
+                    <div class="trust-num">4.9<span class="unit">&#9733;</span></div>
+                        <div class="trust-lbl">Google Rating</div>
+                    </div>
+                    <div class="trust-divider"></div>
+                    <div class="trust-item">
+                        <div class="trust-num"><span class="counter" data-target="380">0</span><span
+                                class="unit">+</span></div>
+                        <div class="trust-lbl">5-Star Reviews</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-right">
+                <div class="hero-card-main">
+                    <div class="hcard-label">Patient Reviews</div>
+                    <div class="hcard-title">What Our Patients Say</div>
+                    <div class="rating-row">
+                    <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        <div class="rating-info">
+                            <div class="rating-score">4.9 / 5.0</div>
+                            <div class="rating-count">Based on 380+ Google Reviews</div>
+                        </div>
+                    </div>
+                    <div class="review-item">
+                        <div class="review-top">
+                            <div class="avatar av1">SC</div>
+                            <div>
+                                <div class="review-name">Sarah C.</div>
+                                <div class="review-time">2 days ago</div>
+                            </div>
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                        <div class="review-text">"Dr. Patel completely transformed my smile. The Invisalign process was
+                            smooth and I'm thrilled with the results. Best dental experience I've ever had!"</div>
+                    </div>
+                    <div class="review-item">
+                        <div class="review-top">
+                            <div class="avatar av2">MR</div>
+                            <div>
+                                <div class="review-name">Mike R.</div>
+                                <div class="review-time">1 week ago</div>
+                            </div>
+                    <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                        </div>
+                        <div class="review-text">"Incredibly professional team. My teeth whitening results exceeded
+                            expectations. Will never go to another dentist again!"</div>
+                    </div>
+                </div>
+                <div class="hero-pill pill1">
+                    <div class="pill-icon">ðŸ¦·</div>
+                    <div class="pill-text">
+                        <strong>Next Available</strong>
+                        <span>Tomorrow, 9:00 AM</span>
+                    </div>
+                </div>
+                <div class="hero-pill pill2">
+                    <div class="pill-icon">&#10004;</div>
+                    <div class="pill-text">
+                        <strong>Accepts Insurance</strong>
+                        <span>Delta, Cigna, Aetna + more</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="trust-bar">
+        <div class="trust-bar-inner">
+            <span class="trust-bar-label">Accepts Insurance:</span>
+            <span class="ins-logo">Delta Dental</span>
+            <div class="ins-divider"></div>
+            <span class="ins-logo">Cigna</span>
+            <div class="ins-divider"></div>
+            <span class="ins-logo">Aetna</span>
+            <div class="ins-divider"></div>
+            <span class="ins-logo">MetLife</span>
+            <div class="ins-divider"></div>
+            <span class="ins-logo">United Healthcare</span>
+            <div class="ins-divider"></div>
+            <span class="ins-logo">BlueCross</span>
+        </div>
+    </div>
+
+    <section class="services" id="services">
+        <div class="container">
+            <div class="services-header reveal">
+                <div>
+                    <div class="section-label">Our Services</div>
+                    <h2 class="services-h2">Everything your smile<br>needs, <em>under one roof</em></h2>
+                </div>
+                <p class="services-desc">From preventive care to complete cosmetic transformations &mdash; our full-service
+                    dental practice handles every aspect of your oral health with precision and care.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <div class="service-icon">&#129463;</div>
+                    <div class="service-name">General Dentistry</div>
+                    <div class="service-desc">Comprehensive exams, cleanings, fillings, and preventive care to keep your
+                        teeth healthy for life.</div>
+                        <div class="service-price">From $150 &middot; Most insurance accepted</div>
+                        <div class="service-link">&#8599;</div>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">&#10024;</div>
+                    <div class="service-name">Teeth Whitening</div>
+                    <div class="service-desc">Professional-grade whitening treatments that deliver results up to 8
+                        shades brighter in a single visit.</div>
+                        <div class="service-price">From $299 &middot; Same-day results</div>
+                        <div class="service-link">&#8599;</div>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">ðŸ˜</div>
+                        <div class="service-name">Invisalign&reg;</div>
+                    <div class="service-desc">Discreet, comfortable clear aligners to straighten your teeth without
+                        traditional metal braces.</div>
+                        <div class="service-price">From $3,500 &middot; Free consultation</div>
+                        <div class="service-link">&#8599;</div>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">ðŸ’Ž</div>
+                    <div class="service-name">Dental Veneers</div>
+                    <div class="service-desc">Ultra-thin porcelain veneers crafted to create a flawless, natural-looking
+                        smile transformation.</div>
+                        <div class="service-price">From $900/tooth &middot; Custom crafted</div>
+                        <div class="service-link">&#8599;</div>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">ðŸ”§</div>
+                    <div class="service-name">Dental Implants</div>
+                    <div class="service-desc">Permanent tooth replacement solutions that look, feel, and function
+                        exactly like natural teeth.</div>
+                        <div class="service-price">From $1,800/implant &middot; Financing available</div>
+                        <div class="service-link">&#8599;</div>
+                </div>
+                <div class="service-card reveal">
+                    <div class="service-icon">ðŸ˜Œ</div>
+                    <div class="service-name">Sedation Dentistry</div>
+                    <div class="service-desc">Anxiety-free dental care with multiple sedation options for patients with
+                        dental phobia.</div>
+                    <div class="service-price">Available for all procedures</div>
+                        <div class="service-link">&#8599;</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-inner">
+                <div class="stats-left reveal">
+                    <div class="section-label" style="color:var(--teal)">Why Choose Us</div>
+                    <h2 class="stats-h2">Dentistry that puts<br><em>you first</em></h2>
+                    <p class="stats-p">We've built Austin's most patient-centered dental practice by combining
+                        cutting-edge technology with genuine care for every person who walks through our door.</p>
+                    <div class="why-list">
+                        <div class="why-item">
+                        <div class="why-check">&#10003;</div>
+                            <div class="why-text">
+                                <strong>Same-Day Emergency Appointments</strong>
+                        <span>Dental emergencies don't wait &mdash; neither do we. Call by noon, seen today.</span>
+                            </div>
+                        </div>
+                        <div class="why-item">
+                        <div class="why-check">&#10003;</div>
+                            <div class="why-text">
+                                <strong>0% Financing Available</strong>
+                                <span>Don't let cost stop you. Flexible payment plans for every budget.</span>
+                            </div>
+                        </div>
+                        <div class="why-item">
+                        <div class="why-check">&#10003;</div>
+                            <div class="why-text">
+                                <strong>Latest Digital X-Ray & 3D Imaging</strong>
+                                <span>90% less radiation than traditional X-rays. Faster, more accurate
+                                    diagnosis.</span>
+                            </div>
+                        </div>
+                        <div class="why-item">
+                        <div class="why-check">&#10003;</div>
+                            <div class="why-text">
+                        <strong>Bilingual Staff &mdash; English &amp; Spanish</strong>
+                                <span>Feel at home. Our team speaks both languages fluently.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stats-right reveal">
+                    <div class="stat-card">
+                        <div class="stat-icon">ðŸ¦·</div>
+                        <div class="stat-num"><span class="counter" data-target="2400">0</span><span
+                                class="suf">+</span></div>
+                        <div class="stat-label">Patients Served</div>
+                    </div>
+                    <div class="stat-card gold">
+                    <div class="stat-icon">&#11088;</div>
+                    <div class="stat-num">4.9<span class="suf" style="color:var(--gold)">&#9733;</span></div>
+                        <div class="stat-label">Google Rating</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">ðŸ†</div>
+                        <div class="stat-num"><span class="counter" data-target="15">0</span><span class="suf">yr</span>
+                        </div>
+                        <div class="stat-label">Years in Austin</div>
+                    </div>
+                    <div class="stat-card gold">
+                        <div class="stat-icon">ðŸ˜Š</div>
+                        <div class="stat-num"><span class="counter" data-target="98">0</span><span class="suf"
+                                style="color:var(--gold)">%</span></div>
+                        <div class="stat-label">Patient Satisfaction</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="before-after" id="before-after">
+        <div class="container">
+            <div class="ba-header reveal">
+                <div class="section-label" style="display:flex;justify-content:center">Real Patient Results</div>
+                <h2 class="ba-h2">See the <em>transformation</em></h2>
+                <p class="ba-sub">Real results from real patients. Drag the slider to see the difference our treatments
+                    make.</p>
+            </div>
+            <div class="ba-tabs reveal">
+                <button class="ba-tab active" onclick="switchCase(this,'whitening')">Whitening</button>
+                <button class="ba-tab" onclick="switchCase(this,'veneers')">Veneers</button>
+                        <button class="ba-tab" onclick="switchCase(this,'invisalign')">Invisalign&reg;</button>
+            </div>
+            <div class="slider-wrap slider-height reveal" id="baSlider">
+                <div class="ba-before">
+                    <div class="tooth-before">
+                        <div class="tooth-visual">
+                            <div class="tooth-body"></div>
+                            <div class="tooth-roots">
+                                <div class="tooth-root"></div>
+                                <div class="tooth-root"></div>
+                            </div>
+                        </div>
+                        <div class="tooth-label" id="beforeLabel">Stained & Discolored</div>
+                        <div class="tooth-sublabel">Before Treatment</div>
+                    </div>
+                    <div class="ba-label left">BEFORE</div>
+                </div>
+                <div class="ba-after" id="baAfter">
+                    <div class="tooth-after">
+                        <div class="tooth-visual">
+                            <div class="tooth-body"></div>
+                            <div class="tooth-roots">
+                                <div class="tooth-root"></div>
+                                <div class="tooth-root"></div>
+                            </div>
+                        </div>
+                        <div class="tooth-label" id="afterLabel">Brilliantly White</div>
+                        <div class="tooth-sublabel">After Treatment</div>
+                    </div>
+                    <div class="ba-label right">AFTER</div>
+                </div>
+                <div class="slider-handle" id="sliderHandle">
+                    <div class="handle-circle">
+                    <div class="handle-arrows">&#9664;&#9654;</div>
+                    </div>
+                </div>
+            </div>
+                <p style="text-align:center;font-size:12px;color:var(--gray300);margin-top:16px">&larr; Drag to compare &rarr;</p>
+            <div class="demo-note reveal">
+                Note: These illustrations are placeholders for the demo. In a live environment, this interactive slider
+                will feature your actual high-resolution clinical before/after photos.
+            </div>
+        </div>
+    </section>
+
+    <section class="doctor-section" id="doctor">
+        <div class="container">
+            <div class="doctor-inner">
+                <div class="doctor-img-wrap reveal">
+                    <div class="doctor-img-bg"></div>
+                    <div class="doctor-img-frame">
+                        <div class="doc-bg-shape"></div>
+                        <div class="doctor-placeholder">
+                            <div class="doc-circle"></div>
+                            <div class="doc-body">
+                                <div class="doc-coat"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="doc-badge-float db1">
+                        <div class="db-icon">ðŸ†</div>
+                        <div class="db-text"><strong>Top Dentist 2024</strong><span>Austin Monthly Magazine</span></div>
+                    </div>
+                    <div class="doc-badge-float db2">
+                        <div class="db-icon">ðŸŽ“</div>
+                        <div class="db-text"><strong>Harvard Trained</strong><span>School of Dental Medicine</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="doctor-right reveal">
+                    <div class="doc-tag">Meet Your Doctor</div>
+                    <h2 class="doc-h2">Dr. Priya Patel, DDS</h2>
+                    <div class="doc-title">Lead Dentist & Founder</div>
+                    <p class="doc-bio">With over 15 years of experience transforming smiles across Austin, Dr. Patel
+                        combines clinical excellence with a warm, patient-first approach. A graduate of Harvard School
+                        of Dental Medicine, she's completed advanced training in cosmetic dentistry, implantology, and
+                        Invisalign at some of the world's leading institutions.</p>
+                    <p class="doc-bio" style="margin-top:-12px">"My goal is simple: make every patient feel genuinely
+                        cared for, not just treated. A healthy smile changes everything."</p>
+                    <div class="doc-creds">
+                        <div class="cred-badge"><span>ðŸŽ“</span> Harvard School of Dental Medicine</div>
+                    <div class="cred-badge"><span>&#10004;</span> ADA Member</div>
+                    <div class="cred-badge"><span>&#127942;</span> Invisalign&reg; Platinum Provider</div>
+                    <div class="cred-badge"><span>&#11088;</span> Top Dentist &mdash; Austin 2024</div>
+                    </div>
+                    <div class="doc-stats">
+                        <div class="doc-stat">
+                            <div class="doc-stat-n"><span class="counter" data-target="2400">0</span><em>+</em></div>
+                            <div class="doc-stat-l">Smiles Transformed</div>
+                        </div>
+                        <div class="doc-stat">
+                            <div class="doc-stat-n"><span class="counter" data-target="15">0</span><em>yr</em></div>
+                            <div class="doc-stat-l">Experience</div>
+                        </div>
+                        <div class="doc-stat">
+                            <div class="doc-stat-n"><span class="counter" data-target="380">0</span><em>+</em></div>
+                            <div class="doc-stat-l">5-Star Reviews</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="test-header reveal">
+            <div class="section-label" style="justify-content:center;color:var(--teal)">Patient Reviews</div>
+            <h2 class="test-h2">380+ patients can't be <em>wrong</em></h2>
+            <p class="test-sub">Real reviews from our Google listing. We never edit or filter feedback.</p>
+        </div>
+        <div class="test-track-wrap">
+            <div class="test-track" id="testTrack">
+                <div class="test-card">
+                    <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="test-quote">"Dr. Patel gave me the smile I always wanted. The veneer process was
+                        explained so clearly at every step. I can't stop smiling now!"</div>
+                    <div class="test-author">
+                        <div class="test-av ta1">JL</div>
+                        <div>
+                            <div class="test-name">Jennifer L.</div>
+                            <div class="test-loc">Austin, TX &middot; Veneers</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="test-card">
+                    <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="test-quote">"Had severe dental anxiety for years. The sedation option changed
+                        everything. The staff made me feel completely safe. Amazing practice."</div>
+                    <div class="test-author">
+                        <div class="test-av ta2">MK</div>
+                        <div>
+                            <div class="test-name">Mark K.</div>
+                            <div class="test-loc">Austin, TX &middot; Sedation Dentistry</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="test-card">
+                    <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="test-quote">"My Invisalign journey took 14 months and the result is jaw-dropping. Worth
+                        every penny. Professional, friendly, and genuinely caring team."</div>
+                    <div class="test-author">
+                        <div class="test-av ta3">AR</div>
+                        <div>
+                            <div class="test-name">Ashley R.</div>
+                            <div class="test-loc">Round Rock, TX &middot; Invisalign</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="test-card">
+                    <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="test-quote">"Walked in with a cracked tooth on a Friday afternoon. They fit me in within
+                        2 hours. Same-day crown. Absolutely incredible service."</div>
+                    <div class="test-author">
+                        <div class="test-av ta4">DW</div>
+                        <div>
+                            <div class="test-name">David W.</div>
+                            <div class="test-loc">Cedar Park, TX &middot; Emergency</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="test-card">
+                    <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="test-quote">"The whitening results are stunning &mdash; 8 shades whiter in one hour. I'm
+                        getting married next month and my teeth look absolutely perfect."</div>
+                    <div class="test-author">
+                        <div class="test-av ta5">SR</div>
+                        <div>
+                            <div class="test-name">Samantha R.</div>
+                            <div class="test-loc">Austin, TX &middot; Whitening</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="test-card">
+                    <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="test-quote">"Best dental investment I've ever made. Implants look and feel completely
+                        natural. Dr. Patel's skill level is extraordinary. 10/10."</div>
+                    <div class="test-author">
+                        <div class="test-av ta6">TC</div>
+                        <div>
+                            <div class="test-name">Thomas C.</div>
+                            <div class="test-loc">Austin, TX &middot; Implants</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="test-card">
+                    <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="test-quote">"Dr. Patel gave me the smile I always wanted. The veneer process was
+                        explained so clearly at every step. I can't stop smiling now!"</div>
+                    <div class="test-author">
+                        <div class="test-av ta1">JL</div>
+                        <div>
+                            <div class="test-name">Jennifer L.</div>
+                            <div class="test-loc">Austin, TX &middot; Veneers</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="test-card">
+                    <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="test-quote">"Had severe dental anxiety for years. The sedation option changed
+                        everything. The staff made me feel completely safe. Amazing practice."</div>
+                    <div class="test-author">
+                        <div class="test-av ta2">MK</div>
+                        <div>
+                            <div class="test-name">Mark K.</div>
+                            <div class="test-loc">Austin, TX &middot; Sedation Dentistry</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="test-card">
+                    <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="test-quote">"My Invisalign journey took 14 months and the result is jaw-dropping. Worth
+                        every penny. Professional, friendly, and genuinely caring team."</div>
+                    <div class="test-author">
+                        <div class="test-av ta3">AR</div>
+                        <div>
+                            <div class="test-name">Ashley R.</div>
+                            <div class="test-loc">Round Rock, TX &middot; Invisalign</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="test-card">
+                    <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="test-quote">"Walked in with a cracked tooth on a Friday afternoon. They fit me in within
+                        2 hours. Same-day crown. Absolutely incredible service."</div>
+                    <div class="test-author">
+                        <div class="test-av ta4">DW</div>
+                        <div>
+                            <div class="test-name">David W.</div>
+                            <div class="test-loc">Cedar Park, TX &middot; Emergency</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="test-card">
+                    <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="test-quote">"The whitening results are stunning &mdash; 8 shades whiter in one hour. I'm
+                        getting married next month and my teeth look absolutely perfect."</div>
+                    <div class="test-author">
+                        <div class="test-av ta5">SR</div>
+                        <div>
+                            <div class="test-name">Samantha R.</div>
+                            <div class="test-loc">Austin, TX &middot; Whitening</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="test-card">
+                    <div class="test-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <div class="test-quote">"Best dental investment I've ever made. Implants look and feel completely
+                        natural. Dr. Patel's skill level is extraordinary. 10/10."</div>
+                    <div class="test-author">
+                        <div class="test-av ta6">TC</div>
+                        <div>
+                            <div class="test-name">Thomas C.</div>
+                            <div class="test-loc">Austin, TX &middot; Implants</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="booking-section" id="booking">
+        <div class="container">
+            <div class="booking-inner">
+                <div class="booking-left reveal">
+                    <div class="section-label">Get In Touch</div>
+                    <h2 class="book-h2">Ready for your<br>best <em>smile?</em></h2>
+                    <p class="book-p">Book your free consultation today. Our friendly team will walk you through every
+                        option, answer every question, and help you choose the right treatment &mdash; with zero pressure.</p>
+                    <div class="contact-row">
+                        <div class="contact-icon">&#128222;</div>
+                        <div>
+                            <div class="contact-label">Phone</div>
+                            <div class="contact-val">(512) 555-0192</div>
+                        </div>
+                    </div>
+                    <div class="contact-row">
+                        <div class="contact-icon">&#128205;</div>
+                        <div>
+                            <div class="contact-label">Address</div>
+                            <div class="contact-val">2840 W. Anderson Ln, Austin TX 78757</div>
+                        </div>
+                    </div>
+                    <div class="contact-row">
+                        <div class="contact-icon">&#128231;</div>
+                        <div>
+                            <div class="contact-label">Email</div>
+                            <div class="contact-val">hello@brightsmileaustin.com</div>
+                        </div>
+                    </div>
+                    <div class="hours-grid" style="margin-top:24px">
+                        <div class="hour-row"><span class="hour-day">Mon &ndash; Thu</span><span class="hour-time">8am &ndash;
+                                6pm</span></div>
+                        <div class="hour-row"><span class="hour-day">Friday</span><span class="hour-time">8am &ndash;
+                                4pm</span></div>
+                        <div class="hour-row"><span class="hour-day">Saturday</span><span class="hour-time">9am &ndash;
+                                2pm</span></div>
+                        <div class="hour-row"><span class="hour-day">Sunday</span><span class="hour-time">Closed</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="booking-form reveal" id="bookingForm" onsubmit="handleSubmit(event)">
+                    <div class="form-title">Book Your Appointment</div>
+                    <div class="form-sub">Free consultation &middot; No commitment required</div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">First Name *</label>
+                            <input type="text" class="form-input" placeholder="Sarah" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Last Name *</label>
+                            <input type="text" class="form-input" placeholder="Johnson" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Phone Number *</label>
+                            <input type="tel" class="form-input" placeholder="(512) 555-0000" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email *</label>
+                            <input type="email" class="form-input" placeholder="sarah@email.com" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Service Interested In</label>
+                            <select class="form-select">
+                                <option>General Checkup & Cleaning</option>
+                                <option>Teeth Whitening</option>
+                                <option>Invisalign&reg; Consultation</option>
+                                <option>Veneers Consultation</option>
+                                <option>Dental Implants</option>
+                                <option>Emergency Appointment</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Preferred Date</label>
+                            <input type="date" class="form-input">
+                        </div>
+                    </div>
+                    <div class="form-group" style="margin-bottom:0">
+                        <label class="form-label">Any concerns or questions?</label>
+                        <textarea class="form-textarea"
+                            placeholder="Tell us anything that will help us prepare for your visit..."></textarea>
+                    </div>
+                    <button type="submit" class="form-submit" id="submitBtn">&#128197; Request My Appointment &rarr;</button>
+                    <div class="form-note">&#128274; Your information is 100% private. We never share your data.</div>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo">Bright Smile Dental</div>
+                    <div class="footer-logo-sub">Austin, Texas</div>
+                    <p class="footer-desc">Austin's most trusted dental practice. Modern dentistry with a personal touch
+                        &mdash; serving families for over 15 years.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">General Dentistry</a></li>
+                        <li><a href="#">Teeth Whitening</a></li>
+                        <li><a href="#">Invisalign&reg;</a></li>
+                        <li><a href="#">Veneers</a></li>
+                        <li><a href="#">Implants</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Practice</h4>
+                    <ul>
+                        <li><a href="#">About Dr. Patel</a></li>
+                        <li><a href="#">Our Team</a></li>
+                        <li><a href="#">Patient Reviews</a></li>
+                        <li><a href="#">Insurance</a></li>
+                        <li><a href="#">Financing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="#">Book Appointment</a></li>
+                        <li><a href="#">Emergency Line</a></li>
+                        <li><a href="#">Patient Portal</a></li>
+                        <li><a href="#">Directions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copy">&copy; 2026 Bright Smile Dental, Austin TX. All rights reserved.</div>
+                <div class="footer-built">Website by <a href="https://kimiclaw.in" target="_blank">KimiClaw AI</a> &middot;
+                    Built in 48 hours</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // â”€â”€ Nav scroll effect & Mobile Menu â”€â”€
+        window.addEventListener('scroll', () => {
+            document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40);
+        });
+
+        const menuToggle = document.querySelector('.mobile-menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.textContent = navLinks.classList.contains('active') ? '\u00D7' : '\u2630';
+        });
+
+        // Close menu when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.textContent = '\u2630';
+            });
+        });
+
+        // â”€â”€ Scroll reveal â”€â”€
+        gsap.utils.toArray('.reveal').forEach(el => {
+            gsap.to(el, {
+                opacity: 1, y: 0, duration: 0.85,
+                ease: 'power3.out',
+                scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none none' }
+            });
+        });
+
+        // â”€â”€ Counter animation â”€â”€
+        function animateCounter(el) {
+            const target = parseInt(el.dataset.target);
+            let start = 0;
+            const dur = 1800;
+            const startTime = performance.now();
+            function update(now) {
+                const p = Math.min((now - startTime) / dur, 1);
+                const eased = 1 - Math.pow(1 - p, 3);
+                el.textContent = Math.floor(eased * target).toLocaleString();
+                if (p < 1) requestAnimationFrame(update);
+                else el.textContent = target.toLocaleString();
+            }
+            requestAnimationFrame(update);
+        }
+        const counters = document.querySelectorAll('.counter');
+        const counterObserver = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) { animateCounter(e.target); counterObserver.unobserve(e.target); } });
+        }, { threshold: 0.5 });
+        counters.forEach(c => counterObserver.observe(c));
+
+        // â”€â”€ Before/After Slider â”€â”€
+        const slider = document.getElementById('baSlider');
+        const afterPanel = document.getElementById('baAfter');
+        const handle = document.getElementById('sliderHandle');
+        let isDragging = false;
+        let sliderPct = 50;
+
+        function setSlider(pct) {
+            sliderPct = Math.max(5, Math.min(95, pct));
+            afterPanel.style.clipPath = `inset(0 ${100 - sliderPct}% 0 0)`;
+            handle.style.left = sliderPct + '%';
+        }
+        setSlider(50);
+
+        function getSliderPct(e) {
+            const rect = slider.getBoundingClientRect();
+            const x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+            return (x / rect.width) * 100;
+        }
+        slider.addEventListener('mousedown', e => { isDragging = true; setSlider(getSliderPct(e)); });
+        window.addEventListener('mousemove', e => { if (isDragging) setSlider(getSliderPct(e)); });
+        window.addEventListener('mouseup', () => isDragging = false);
+        slider.addEventListener('touchstart', e => { isDragging = true; setSlider(getSliderPct(e)); }, { passive: true });
+        window.addEventListener('touchmove', e => { if (isDragging) setSlider(getSliderPct(e)); }, { passive: true });
+        window.addEventListener('touchend', () => isDragging = false);
+
+        // Auto demo on load
+        setTimeout(() => {
+            let p = 50, dir = -1;
+            const demo = setInterval(() => {
+                p += dir * 1.2;
+                setSlider(p);
+                if (p <= 15 || p >= 85) dir *= -1;
+                if (Math.abs(p - 50) < 1 && dir === 1) clearInterval(demo);
+            }, 16);
+        }, 1000);
+
+        // â”€â”€ Before/After tab switch â”€â”€
+        const caseData = {
+            whitening: { before: 'Stained & Discolored', after: 'Brilliantly White' },
+            veneers: { before: 'Chipped & Uneven', after: 'Perfectly Shaped' },
+            invisalign: { before: 'Crowded & Misaligned', after: 'Straight & Aligned' }
+        };
+        function switchCase(btn, type) {
+            document.querySelectorAll('.ba-tab').forEach(t => t.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById('beforeLabel').textContent = caseData[type].before;
+            document.getElementById('afterLabel').textContent = caseData[type].after;
+            setSlider(50);
+        }
+
+        // â”€â”€ Form submit with validation â”€â”€
+        function handleSubmit(e) {
+            e.preventDefault(); // Prevents page reload
+
+            const btn = document.getElementById('submitBtn');
+            const form = document.getElementById('bookingForm');
+
+            btn.textContent = '\u2714 Appointment Requested!';
+            btn.style.background = 'linear-gradient(135deg, #059669, #34d399)';
+            btn.disabled = true;
+
+            setTimeout(() => {
+                btn.textContent = '\uD83D\uDCC5 Request My Appointment \u2192';
+                btn.style.background = '';
+                btn.disabled = false;
+                form.reset(); // Clear the form after success
+            }, 4000);
+        }
+
+        // â”€â”€ Stagger service cards â”€â”€
+        gsap.utils.toArray('.service-card').forEach((card, i) => {
+            gsap.fromTo(card,
+                { opacity: 0, y: 30 },
+                {
+                    opacity: 1, y: 0, duration: 0.6, delay: i * 0.08, ease: 'power3.out',
+                    scrollTrigger: { trigger: card, start: 'top 90%' }
+                }
+            );
+        });
+    </script>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/69c2242effb4f81c353b4f71/1jkf5qm75';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+<script src="../assets/js/static-contact-patch.js"></script>
+</body>
+
+</html>

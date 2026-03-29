@@ -1,0 +1,14 @@
+﻿{
+  "name": "KimiClaw AI",
+  "short_name": "KimiClaw",
+  "description": "AI-Accelerated Websites for Faster Launches",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#050816",
+  "theme_color": "#A78BFA",
+  "icons": [
+    { "src": "/assets/images/site/favicon-16.png", "sizes": "16x16", "type": "image/png" },
+    { "src": "/assets/images/site/favicon-32.png", "sizes": "32x32", "type": "image/png" },
+    { "src": "/assets/images/site/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

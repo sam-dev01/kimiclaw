@@ -1,0 +1,21 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#06101C"/>
+  <rect x="34" y="34" width="1132" height="562" rx="40" fill="url(#panel)" stroke="rgba(255,255,255,0.1)"/>
+  <circle cx="1002" cy="154" r="108" fill="url(#orb)" opacity="0.7"/>
+  <circle cx="904" cy="508" r="140" fill="#0E2A49" opacity="0.6"/>
+  <rect x="88" y="88" width="140" height="140" rx="32" fill="#0B1830" stroke="rgba(255,255,255,0.08)"/>
+  <path d="M130 124H153V176L203 124H231L180 178L235 264H207L162 201L153 211V264H130V124Z" fill="#F4F7FB"/>
+  <text x="88" y="340" fill="#F4F7FB" font-size="74" font-family="Arial, Helvetica, sans-serif" font-weight="700">KimiClaw AI Blog</text>
+  <text x="88" y="400" fill="#93A4BD" font-size="28" font-family="Arial, Helvetica, sans-serif">AI websites, conversion design, SaaS growth, and premium digital execution.</text>
+  <text x="88" y="488" fill="#7EE7D8" font-size="24" font-family="Arial, Helvetica, sans-serif">No upfront payment • Fast delivery • Built for global clients</text>
+  <defs>
+    <linearGradient id="panel" x1="100" y1="50" x2="1100" y2="580" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0C1B33"/>
+      <stop offset="1" stop-color="#09111D"/>
+    </linearGradient>
+    <radialGradient id="orb" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1002 154) rotate(90) scale(108)">
+      <stop stop-color="#7EE7D8"/>
+      <stop offset="1" stop-color="#7EE7D8" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+</svg>
