@@ -274,6 +274,20 @@
       '</div>';
   }
 
+  function getPostHref(slug) {
+    return `/blog/${encodeURIComponent(slug)}`;
+  }
+
+  function getArticleSlug() {
+    const pathSegments = window.location.pathname.split('/').filter(Boolean);
+    if (pathSegments[0] === 'blog' && pathSegments[1]) {
+      return decodeURIComponent(pathSegments[1]);
+    }
+
+    const params = new URLSearchParams(window.location.search);
+    return params.get('slug') || fallbackPosts[0].slug.current;
+  }
+
   function buildPostCard(post) {
     const category = post.categories?.[0]?.title || 'Blog';
     const image = post.mainImage?.asset?.url
@@ -285,7 +299,7 @@
         image +
         '<div class="blog-card-body">' +
           `<span class="blog-panel-eyebrow">${escapeHtml(category)}</span>` +
-          `<h3><a href="blog-post.html?slug=${encodeURIComponent(post.slug.current)}">${escapeHtml(post.title)}</a></h3>` +
+          `<h3><a href="${getPostHref(post.slug.current)}">${escapeHtml(post.title)}</a></h3>` +
           `<p>${escapeHtml(post.excerpt || '')}</p>` +
           '<div class="blog-card-bottom blog-card-meta">' +
             `<span>${formatDate(post.publishedAt)}</span>` +
@@ -307,14 +321,14 @@
         image +
         '<div class="featured-post-content">' +
           `<span class="blog-panel-eyebrow">${escapeHtml(category)}</span>` +
-          `<h2><a href="blog-post.html?slug=${encodeURIComponent(post.slug.current)}">${escapeHtml(post.title)}</a></h2>` +
+          `<h2><a href="${getPostHref(post.slug.current)}">${escapeHtml(post.title)}</a></h2>` +
           `<p>${escapeHtml(post.excerpt || '')}</p>` +
           '<div class="blog-card-bottom blog-card-meta">' +
             `<span>${formatDate(post.publishedAt)}</span>` +
             `<span>${getReadingTime(post)} min read</span>` +
             `<span>${escapeHtml(post.author?.name || 'KimiClaw Editorial')}</span>` +
           '</div>' +
-          `<a class="btn btn-primary" href="blog-post.html?slug=${encodeURIComponent(post.slug.current)}">Read article</a>` +
+          `<a class="btn btn-primary" href="${getPostHref(post.slug.current)}">Read article</a>` +
         '</div>' +
       '</article>'
     );
@@ -324,6 +338,9 @@
     document.title = `${post.seoTitle || post.title} | KimiClaw AI Blog`;
 
     const description = post.seoDescription || post.excerpt || '';
+    const canonicalUrl = `https://kimiclaw.in/blog/${encodeURIComponent(post.slug?.current || '')}`;
+    const imageUrl = post.mainImage?.asset?.url || 'https://kimiclaw.in/assets/images/site/og-default.svg';
+
     const descriptionMeta = document.querySelector('meta[name="description"]');
     if (descriptionMeta) descriptionMeta.setAttribute('content', description);
 
@@ -332,6 +349,47 @@
 
     const ogDescription = document.querySelector('meta[property="og:description"]');
     if (ogDescription) ogDescription.setAttribute('content', description);
+
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) ogUrl.setAttribute('content', canonicalUrl);
+
+    const ogImage = document.querySelector('meta[property="og:image"]');
+    if (ogImage) ogImage.setAttribute('content', imageUrl);
+
+    const twitterTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twitterTitle) twitterTitle.setAttribute('content', post.seoTitle || post.title);
+
+    const twitterDescription = document.querySelector('meta[name="twitter:description"]');
+    if (twitterDescription) twitterDescription.setAttribute('content', description);
+
+    const twitterImage = document.querySelector('meta[name="twitter:image"]');
+    if (twitterImage) twitterImage.setAttribute('content', imageUrl);
+
+    const canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (canonicalLink) canonicalLink.setAttribute('href', canonicalUrl);
+
+    const schemaRoot = document.getElementById('articleSchema');
+    if (schemaRoot) {
+      schemaRoot.textContent = JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        headline: post.seoTitle || post.title,
+        description,
+        datePublished: post.publishedAt,
+        dateModified: post.publishedAt,
+        image: imageUrl,
+        author: {
+          '@type': 'Person',
+          name: post.author?.name || 'KimiClaw Editorial',
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'KimiClaw AI',
+          url: 'https://kimiclaw.in/',
+        },
+        mainEntityOfPage: canonicalUrl,
+      });
+    }
   }
 
   function renderBlogIndex(posts) {
@@ -359,7 +417,7 @@
 
     recentRoot.innerHTML = orderedPosts.slice(0, 4).map((post) => (
       '<li>' +
-        `<a href="blog-post.html?slug=${encodeURIComponent(post.slug.current)}">${escapeHtml(post.title)}</a>` +
+        `<a href="${getPostHref(post.slug.current)}">${escapeHtml(post.title)}</a>` +
         `<span>${formatDate(post.publishedAt)}</span>` +
       '</li>'
     )).join('');
@@ -448,7 +506,7 @@
     relatedRoot.innerHTML = related.map((candidate) => (
       '<article class="mini-post-card">' +
         `<span>${formatDate(candidate.publishedAt)}</span>` +
-        `<h3><a href="blog-post.html?slug=${encodeURIComponent(candidate.slug.current)}">${escapeHtml(candidate.title)}</a></h3>` +
+        `<h3><a href="${getPostHref(candidate.slug.current)}">${escapeHtml(candidate.title)}</a></h3>` +
         `<p>${escapeHtml(candidate.excerpt || '')}</p>` +
       '</article>'
     )).join('');
@@ -462,8 +520,7 @@
   }
 
   async function initArticlePage() {
-    const params = new URLSearchParams(window.location.search);
-    const slug = params.get('slug') || fallbackPosts[0].slug.current;
+    const slug = getArticleSlug();
     const [post, allPosts] = await Promise.all([getPostBySlug(slug), getPosts()]);
 
     if (!post) {

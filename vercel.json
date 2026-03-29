@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    { "source": "/blog/:slug", "destination": "/blog-post.html?slug=:slug" },
+    { "source": "/blog", "destination": "/blog.html" },
+    { "source": "/work", "destination": "/work.html" },
+    { "source": "/privacy-policy", "destination": "/privacy-policy.html" },
+    { "source": "/terms", "destination": "/terms.html" }
+  ]
+}
